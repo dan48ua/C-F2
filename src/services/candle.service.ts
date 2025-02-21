@@ -6,13 +6,13 @@ axios.defaults.baseURL = API_URL
 
 export const getCandles = {
 	async getAll() {
-		console.log('qwe')
-		const { data } = await axios.get<ICandle[]>('/')
+		const { data } = await axios.get<ICandle[]>('/candles')
 		return data
 	},
 	async getById(id: string) {
-		console.log('ewq')
-		const { data } = await axios.get<ICandle[]>(`/${id}`)
+		const { data } = await axios.get<ICandle[]>(`/candles`, {params: {
+			id,
+		}})
 		return data[0]
 	},
 }

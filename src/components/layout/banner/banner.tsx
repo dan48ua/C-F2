@@ -8,7 +8,7 @@ const Background: FC = () => {
 			<Image
 				className={style.backgroundImg}
 				alt='background'
-				src='/backImg.svg'
+				src='/BackImg.svg'
 				quality={100}
 				fill
 				sizes='100%'
