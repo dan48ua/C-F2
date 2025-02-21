@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 .backgroundSection {
 	position: relative;
 	width: 100%;
@@ -21,21 +23,20 @@
 
 .headline {
 	position: absolute;
-	top: 12%;
-	left: 10%;
-	color: #fff;
+	top: 2rem;
+	left: 3rem;
+	color: #ffedc6;
+	text-shadow: 5px 3px 4px #dbcaa7;
 	font-size: 7rem;
 	font-weight: 700;
-	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 	z-index: 3;
+	font-family: 'Roboto', serif;
 }
 
 .candleContainer {
 	position: absolute;
 	bottom: -23%;
 	left: -31%;
-	// bottom: 0;
-	// left: 0;
 	width: 90%;
 	height: 90%;
 	z-index: 1;

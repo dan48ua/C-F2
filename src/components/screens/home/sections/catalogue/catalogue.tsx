@@ -3,16 +3,20 @@
 import { ICandleData } from '@/interfaces/candle.interface'
 import React from 'react'
 import Candle from './candle/candle'
+import style from './catalogue.module.scss'
 
 const Catalogue: React.FC<ICandleData> = ({ candles }) => {
 	return (
-		<div style={{ display: 'flex', flexWrap: 'wrap' }}>
-			{candles.length ? (
-				candles.map(candle => <Candle key={candle.id} candle={candle} />)
-			) : (
-				<div>Candles not found!</div>
-			)}
-		</div>
+		<>
+			<h2 className={style.title}>PRODUCTS</h2>
+			<div className={style.container}>
+				{candles.length ? (
+					candles.map(candle => <Candle key={candle.id} candle={candle} />)
+				) : (
+					<div>Candles not found!</div>
+				)}
+			</div>
+		</>
 	)
 }
 

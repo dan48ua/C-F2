@@ -22,9 +22,9 @@ const Background: FC = () => {
 					<br />
 					MOMENTS
 					<br />
-					WITH WARMTH AND
+					WITH WARMTH
 					<br />
-					ELEGANCE
+					AND ELEGANCE
 				</h1>
 			</div>
 

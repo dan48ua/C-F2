@@ -1,17 +1,23 @@
 // src/components/screens/home/sections/candles.tsx
 
 import { ICandleDataSingle } from '@/interfaces/candle.interface'
-import { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FC } from 'react'
+import style from '../catalogue.module.scss'
 
 const CandleCard: FC<ICandleDataSingle> = ({ candle }) => {
-	return <div>
-		<Image src={candle.image} alt={candle.name} width='200' height='200'/>
-		<h2>{candle.name}</h2>
-		<small>{candle.price}</small>
-		<Link href={`/candle/${candle.id}`}>Read more </Link>
-	</div>
+	return (
+		<div className={style.card}>
+			<Image src={candle.image} alt={candle.name} width='300' height='300' />
+			<h2 className={style.cardTitle}>{candle.name}</h2>
+			<small className={style.cardPrice}>200G - {candle.price}&#8372;</small>
+			<br />
+			<Link className={style.cardLink} href={`/candle/${candle.id}`}>
+				more info{' '}
+			</Link>
+		</div>
+	)
 }
 
 export default CandleCard
