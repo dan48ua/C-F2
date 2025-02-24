@@ -1,6 +1,7 @@
 // src/components/screens/home/sections/candles.tsx
 
 import { ICandleDataSingle } from '@/interfaces/candle.interface'
+import Image from 'next/image'
 import { FC } from 'react'
 import style from './candle.module.scss'
 
@@ -8,8 +9,19 @@ const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 	return (
 		<section className={style.section}>
 			<div className={style.gallery}>
-				<div className={style.column}></div>
-				<div className={style.mainPhoto}></div>
+				<div className={style.column}>
+					<Image src={''} alt={candle.name} width='300' height='300' />
+					<Image src={''} alt={candle.name} width='300' height='300' />
+					<Image src={''} alt={candle.name} width='300' height='300' />
+				</div>
+				<div className={style.mainPhoto}>
+					<Image
+						src={candle.image1}
+						alt={candle.name}
+						width='300'
+						height='300'
+					/>
+				</div>
 			</div>
 			<div className={style.data}>
 				<h2 className={style.title}>{candle.name}</h2>

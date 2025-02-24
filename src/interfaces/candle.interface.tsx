@@ -4,7 +4,7 @@ export interface ICandle {
 	id: number
 	name: string
 	price: number
-	image: string
+	image1: string
 	description?: string // optional
 }
 
