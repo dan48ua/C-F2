@@ -1,36 +1,37 @@
 import Link from 'next/link'
 import { FC } from 'react'
 import style from './header.module.scss'
+import router from 'next/router'
 
 const Header: FC = () => {
 	return (
 		<header className={style.header}>
 			<h1 className={style.siteTitle}>
-				<Link href='/'>ZAPALIUI CANDLES</Link>
+				<button onClick={() => router.push('/')} >ZAPALIUI CANDLES</button>
 			</h1>
 			<div className={style.navRow}>
 				<div className={style.left}>
-					<Link href='./' className={style.link}>
+					<button type="button" className={style.link}>
 						Sign In
-					</Link>
+					</button>
 				</div>
 				<div className={style.right}>
 					<nav>
 						<ul className={style.navList}>
 							<li>
-								<Link href='/about' className={style.link}>
+								<button type="button" onClick={() => router.push('/about')} className={style.link}>
 									About Us
-								</Link>
+								</button>
 							</li>
 							<li>
-								<Link href='/' className={style.link}>
+								<button type="button" className={style.link}>
 									Contacts
-								</Link>
+								</button>
 							</li>
 							<li>
-								<Link href='/' className={style.link}>
+								<button type="button" className={style.link}>
 									Basket
-								</Link>
+								</button>
 							</li>
 						</ul>
 					</nav>

@@ -4,6 +4,7 @@ import Description from './sections/description/description'
 import { NextPage } from 'next'
 import { ICandleData } from '@/interfaces/candle.interface'
 import Catalogue from './sections/catalogue/catalogue'
+import ResetPassword from '@/components/modal/reset.Password/resetPasswrod'
 
 const Home: NextPage<ICandleData> = ({ candles }) => {
 	return (

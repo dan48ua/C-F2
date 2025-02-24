@@ -11,9 +11,14 @@
 	font-weight: bold;
 	padding: 1.5rem 0;
 	font-size: 32px;
-	> a {
+	> button {
 		text-decoration: none;
-		color: black;
+		color: black;		
+		padding: 0;
+    	border: none;
+    	background-color: transparent;
+    	font-size: 25px;
+    	cursor: pointer;
 	}
 }
 
@@ -38,4 +43,9 @@
 	text-decoration: none;
 	color: #333;
 	font-weight: 500;
+	padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 17px;
+    cursor: pointer;
 }
