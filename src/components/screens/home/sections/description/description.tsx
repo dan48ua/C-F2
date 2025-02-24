@@ -7,7 +7,7 @@ const Description: FC = () => {
 		<section className={style.section}>
 			{/* Just place the logo normally */}
 			<Image
-				src='logo.svg'
+				src='./home/logo.svg'
 				alt='Zapaliu Candles Logo'
 				width={105}
 				height={105}

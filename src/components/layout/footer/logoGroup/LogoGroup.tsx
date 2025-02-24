@@ -13,7 +13,7 @@ const LogoGroup: FC = () => {
 				<div>
 					<Image
 						alt='logo'
-						src='/logoGroup.svg'
+						src='./layout/logoGroup.svg'
 						width={250}
 						height={250}
 						style={{ display: 'block', margin: '0 auto' }}
