@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 const Basket: FC = () => {
-    return <></>
+	return <></>
 }
 
 export default Basket

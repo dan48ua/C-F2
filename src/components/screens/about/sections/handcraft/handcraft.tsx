@@ -1,16 +1,17 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import { FC } from 'react'
 import style from './handcraft.module.scss'
 
-const Handcraft: React.FC = () => {
-    return(
-        <section className={style.wrapper}>
-      <h2 className={style.title}>HANDCRAFTED WITH LOVE</h2>
-      <p className={style.description}>
-        At ZAPALUA, we believe that every candle is more than just a source of light.
-        It’s a piece of art that brings warmth, comfort, and a personal touch to your space.
-      </p>
-    </section>
-    )
+const Handcraft: FC = () => {
+	return (
+		<section className={style.wrapper}>
+			<h2 className={style.title}>HANDCRAFTED WITH LOVE</h2>
+			<p className={style.description}>
+				At ZAPALUA, we believe that every candle is more than just a source of
+				light. It’s a piece of art that brings warmth, comfort, and a personal
+				touch to your space.
+			</p>
+		</section>
+	)
 }
+
+export default Handcraft

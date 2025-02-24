@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 const Registration: FC = () => {
-    return <></>
+	return <></>
 }
 
 export default Registration
