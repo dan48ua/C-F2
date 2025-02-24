@@ -4,7 +4,7 @@ import ResetPassword from './resetPassword/resetPasswrod'
 import Registration from './registration/registration'
 import Basket from './pudge/basket'
 
-const Modal: FC = ({ category }) => {
+const Modal: FC = () => {
     return (
         <>
         <Login />
