@@ -8,7 +8,7 @@ const Background: FC = () => {
 			<Image
 				className={style.backgroundImg}
 				alt='background'
-				src='/BackImg.svg'
+				src='/layout/BackImg.svg'
 				quality={100}
 				fill
 				sizes='100%'
@@ -32,7 +32,7 @@ const Background: FC = () => {
 				<Image
 					className={style.candleImg}
 					alt='candle'
-					src='/CandleImg.svg'
+					src='./layout/CandleImg.svg'
 					fill
 					sizes='100%'
 					style={{ objectFit: 'contain' }}
