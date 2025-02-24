@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import style from './handcraft.module.scss'
+import style from '../handcrafteco.module.scss'
 
 const Handcraft: FC = () => {
 	return (

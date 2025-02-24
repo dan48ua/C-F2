@@ -1,0 +1,24 @@
+.wrapper {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #fff;
+  }
+  
+  .card {
+    max-width: 200px;
+    text-align: center;
+  }
+  
+  .cardTitle {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .cardDescription {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
