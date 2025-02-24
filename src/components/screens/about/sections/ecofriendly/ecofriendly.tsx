@@ -5,7 +5,8 @@ const Ecofriendly: FC = () => {
 	return (
 		<section className={style.wrapper}>
 			<h2 className={style.title}>SUSTAINABILITY & ECO-FRIENDLY</h2>
-			<p className={style.description}>
+			<img className= 'ecofriendly-img' src="/about/ecophoto.svg" alt="Handcraft" />
+			<p className={style.description2}>
                 We are committed to sustainability by using natural ingredients
                 and eco-friendly packaging, ensuring a minimal carbon footprint
                 and a healthier environment.

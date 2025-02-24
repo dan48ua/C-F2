@@ -10,7 +10,7 @@ const Combining: React.FC = () => {
       </div>
 
       <div className={style.card}>
-      <img src="/about/natural.svg" alt="Natural" />
+      <img src="/about/naturalphoto.svg" alt="Natural" />
         <h3 className={style.cardTitle}>Natural Ingredients</h3>
       </div>
 
