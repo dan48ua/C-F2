@@ -8,7 +8,10 @@ const Background: FC = () => {
 			<Image
 				className={style.backgroundImg}
 				alt='background'
-				src='/layout/BackImg.svg'
+				// src='/layout/BackImg.svg'
+				// src='/Flag_of_Romania.svg'
+				// src='/lapa.jpeg'
+				src='/tekis.jpg'
 				quality={100}
 				fill
 				sizes='100%'
@@ -18,13 +21,13 @@ const Background: FC = () => {
 
 			<div className={style.textWrapper}>
 				<h1 className={style.headline}>
-					LIGHT UP YOUR
+					LIGHT UP YOURUS
 					<br />
-					MOMENTS
+					MOMENTUS
 					<br />
-					WITH WARMTH
+					WITH WARMTHUS
 					<br />
-					AND ELEGANCE
+					AND ELEGANCUS
 				</h1>
 			</div>
 
@@ -32,11 +35,14 @@ const Background: FC = () => {
 				<Image
 					className={style.candleImg}
 					alt='candle'
-					src='./layout/CandleImg.svg'
-					fill
-					sizes='100%'
-					style={{ objectFit: 'contain' }}
-					priority
+					// src='./layout/CandleImg.svg'
+					// src='/qwesd.jpg'
+					src='/opa.png'
+					// fill
+					// sizes='100%'
+					width='400'
+					height='400'
+					style={{ objectFit: 'contain', left: '450' }}
 				/>
 			</div>
 		</section>

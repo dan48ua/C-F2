@@ -1,0 +1,50 @@
+.section {
+	background-color: #fffff6;
+	text-align: left;
+	width: 100%;
+	position: relative;
+	margin-top: 5rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	> div {
+		margin-left: 10%;
+		margin-right: 15%;
+		margin-top: 5%;
+		> img {
+			margin-top: 6%;
+		}
+		> p {
+			line-height: 1.5;
+			color: #333;
+			font-size: 25px;
+			margin-bottom: 2rem;
+			margin-top: 1rem;
+		}
+		> h2 {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+			text-align: center;
+		}
+		> h3 {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+			margin-top: 1%;
+		}
+		> span {
+			margin-top: 2%;
+			font-size: larger;
+			position: relative;
+		}
+	}
+}
+
+.button {
+	background-color: #ffedc6;
+	padding: 3% 4% 3% 4%;
+	font-size: 27px;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin: 0 5% 2% 5%;
+	border-radius: 15px;
+	text-align: center;
+}

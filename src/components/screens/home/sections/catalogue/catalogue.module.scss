@@ -20,7 +20,19 @@
 .card {
 	margin-bottom: 2rem;
 	text-align: center;
-	text-transform: uppercase;
+	> .cardLink,
+	.cardTitle {
+		text-transform: uppercase;
+	}
+	> button {
+		text-decoration: underline;
+		color: black;
+		font-size: 18px;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+	}
 }
 .cardTitle {
 	font-size: 20px;

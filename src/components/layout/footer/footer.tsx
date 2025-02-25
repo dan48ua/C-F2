@@ -1,11 +1,9 @@
 import { FC } from 'react'
 import style from './footer.module.scss'
-import LogoGroup from './logoGroup/LogoGroup'
 
 const Footer: FC = () => {
 	return (
 		<>
-			<LogoGroup />
 			<footer className={style.footer}>
 				<div className={style.container}>
 					<div className={style.grid}>

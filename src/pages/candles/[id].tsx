@@ -1,3 +1,4 @@
+import Footer from '@/components/layout/footer/footer'
 import Header from '@/components/layout/header/Header'
 import CandleSingle from '@/components/screens/candles/candle'
 import { ICandleDataSingle } from '@/interfaces/candle.interface'
@@ -10,6 +11,7 @@ const CandlePage: NextPage<ICandleDataSingle> = ({ candle }) => {
 		<>
 			<Header />
 			<CandleSingle candle={candle} />
+			<Footer />
 		</>
 	)
 }

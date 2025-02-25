@@ -1,5 +1,6 @@
 import { FC, type PropsWithChildren } from 'react'
 import Footer from './footer/footer'
+import LogoGroup from './footer/logoGroup/LogoGroup'
 import Header from './header/Header'
 
 const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
@@ -7,6 +8,7 @@ const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
 		<div>
 			<Header />
 			{children}
+			<LogoGroup />
 			<Footer />
 		</div>
 	)
