@@ -4,6 +4,7 @@
 	width: 100%;
 	position: relative;
 	margin-top: 5rem;
+	padding-bottom: 2%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	> div {
@@ -11,7 +12,8 @@
 		margin-right: 15%;
 		margin-top: 5%;
 		> img {
-			margin-top: 6%;
+			left: 20%;
+			position: relative;
 		}
 		> p {
 			line-height: 1.5;

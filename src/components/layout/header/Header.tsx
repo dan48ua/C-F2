@@ -11,7 +11,13 @@ const Header: FC = () => {
 			</h1>
 			<div className={style.navRow}>
 				<div className={style.left}>
-					<button type='button' className={style.link}>
+					<button
+						type='button'
+						className={style.link}
+						onClick={() => {
+							router.push({ pathname: '/', query: { page: 'login' } })
+						}}
+					>
 						Sign Us
 					</button>
 				</div>
