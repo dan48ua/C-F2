@@ -6,7 +6,6 @@ import Registration from './registration/registration'
 import ResetPassword from './resetPassword/resetPasswrod'
 
 const Modal: FC<{ page: string }> = ({ page }) => {
-	console.log('qwe', page)
 	const [login, setLogin] = useState(false)
 	const [registration, setRegistration] = useState(false)
 	const [resetPassword, setResetPassword] = useState(false)
@@ -31,7 +30,6 @@ const Modal: FC<{ page: string }> = ({ page }) => {
 			router.push('/')
 		}
 	}, [page])
-	console.log('login', login)
 	return (
 		<>
 			{login ? (

@@ -8,8 +8,8 @@ const Handcraft: FC = () => {
 			<h2 className={style.title}>HANDCRAFTED WITH LOVE</h2>
 			<img
 				className='handcraft-img'
-				src='/about/handcraftphoto.svg'
-				// src='/pppudge.jpg'
+				// src='/about/handcraftphoto.svg'
+				src='/pppudge.jpg'
 				alt='Handcraft'
 			/>
 			<p className={style.description1}>

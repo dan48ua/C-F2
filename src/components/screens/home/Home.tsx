@@ -10,7 +10,6 @@ import Description from './sections/description/description'
 const Home: NextPage<ICandleData> = ({ candles }) => {
 	const router = useRouter()
 	const { page } = router.query
-	console.log('page', page)
 
 	return (
 		<>

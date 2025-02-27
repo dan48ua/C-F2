@@ -35,13 +35,13 @@ const Background: FC = () => {
 				<Image
 					className={style.candleImg}
 					alt='candle'
-					src='./layout/CandleImg.svg'
+					// src='./layout/CandleImg.svg'
 					// src='/qwesd.jpg'
-					// src='/opa.png'
-					fill
-					sizes='100%'
-					// width='400'
-					// height='400'
+					src='/opa.png'
+					// fill
+					// sizes='100%'
+					width='400'
+					height='400'
 					style={{ objectFit: 'contain' }}
 				/>
 			</div>

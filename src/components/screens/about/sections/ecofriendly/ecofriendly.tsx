@@ -8,8 +8,8 @@ const Ecofriendly: FC = () => {
 			<h2 className={style.title}>SUSTAINABILITY & ECO-FRIENDLY</h2>
 			<img
 				className='ecofriendly-img'
-				src='/about/ecophoto.svg'
-				// src='/plok.jpg'
+				// src='/about/ecophoto.svg'
+				src='/plok.jpg'
 				alt='Handcraft'
 			/>
 			<p className={style.description2}>
