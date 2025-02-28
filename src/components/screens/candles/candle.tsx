@@ -9,10 +9,12 @@ const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 	// добавить ароматы
 	return (
 		<section className={style.section}>
-			<div className={style.mainPhoto}>
-				<Image src={candle.image} alt={candle.name} width={500} height={500} />
+			<div className={style.imageContainer}>
+				<div className={style.mainPhoto}>
+					<Image src={candle.image} alt={candle.name} width={500} height={500} />
+				</div>
 			</div>
-			<div className={style.data}>
+			<div className={style.dataContainer}>
 				<h2 className={style.title}>{candle.name}</h2>
 				<p className={style.price}>200g - {candle.price} UAH</p>
 				{/* <button className={style.button}>Add to cart</button> */}

@@ -11,7 +11,6 @@ const CandlePage: NextPage<ICandleDataSingle> = ({ candle }) => {
 		<>
 			<Header />
 			<CandleSingle candle={candle} />
-			<Footer />
 		</>
 	)
 }

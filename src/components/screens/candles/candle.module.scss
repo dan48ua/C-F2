@@ -7,6 +7,11 @@
 	padding-bottom: 2%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	> div > div {
+		margin-left: 10%;
+		margin-right: 15%;
+		margin-top: 5%;
+	}
 	> div {
 		margin-left: 10%;
 		margin-right: 15%;
