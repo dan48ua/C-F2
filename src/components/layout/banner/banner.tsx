@@ -9,8 +9,8 @@ const Background: FC = () => {
 				className={style.backgroundImg}
 				alt='background'
 				// src='/layout/BackImg.svg'
-				// src='/Flag_of_Romania.svg'
-				src='/lapa.jpeg'
+				src='/Flag_of_Romania.svg'
+				// src='/lapa.jpeg'
 				// src='/tekis.jpg'
 				quality={100}
 				fill
@@ -36,8 +36,8 @@ const Background: FC = () => {
 					className={style.candleImg}
 					alt='candle'
 					// src='./layout/CandleImg.svg'
-					// src='/qwesd.jpg'
-					src='/opa.png'
+					src='/qwesd.jpg'
+					// src='/opa.png'
 					// fill
 					// sizes='100%'
 					width='400'

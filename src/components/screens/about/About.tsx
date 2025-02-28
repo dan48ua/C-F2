@@ -8,10 +8,9 @@ import Combining from './sections/combining/combining'
 import Ecofriendly from './sections/ecofriendly/ecofriendly'
 import Handcraft from './sections/handcraft/handcraft'
 
-const about: NextPage = () => {
+const About: NextPage = () => {
 	const router = useRouter()
 	const { page } = router.query
-	// используй вместо дефолтного имг компонент Image от некста
 	return (
 		<Layout>
 			<Banner />
@@ -27,4 +26,4 @@ const about: NextPage = () => {
 	)
 }
 
-export default about
+export default About
