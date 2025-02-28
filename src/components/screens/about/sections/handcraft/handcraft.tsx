@@ -1,22 +1,22 @@
 import { FC } from 'react'
-import style from '../handcrafteco.module.scss'
+import style from './handcrafteco.module.scss'
 
 const Handcraft: FC = () => {
-	// используй вместо дефолтного имг компонент Image от некста
 	return (
-		<section className={style.wrapper}>
-			<h2 className={style.title}>HANDCRAFTED WITH LOVE</h2>
+		<section className={style.section}>
 			<img
 				className='handcraft-img'
-				// src='/about/handcraftphoto.svg'
-				src='/pppudge.jpg'
+				src='/about/handcraftphoto.svg'
 				alt='Handcraft'
 			/>
-			<p className={style.description1}>
-				At ZAPALUA, we believe that every candle is more than just a source of
-				light. It’s a piece of art that brings warmth, comfort, and a personal
-				touch to your space.
-			</p>
+			<div className={style.text}>
+				<h2 className={style.title}>HANDCRAFTED WITH LOVE</h2>
+				<p className={style.description}>
+					At ZAPALUA, we believe that every candle is more than just a source of light—it’s an experience, a statement, 
+					and a reflection of your unique style. Each candle is carefully crafted to not only illuminate your space but 
+					also to create an ambiance of warmth, comfort, and tranquility. Whether you're seeking relaxation after a long day, setting the mood for a special occasion.
+				</p>
+			</div>
 		</section>
 	)
 }

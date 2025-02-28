@@ -1,22 +1,22 @@
 import { FC } from 'react'
-import style from '../handcrafteco.module.scss'
+import style from './ecofriendly.module.scss'
 
 const Ecofriendly: FC = () => {
-	// используй вместо дефолтного имг компонент Image от некста
 	return (
-		<section className={style.wrapper}>
-			<h2 className={style.title}>SUSTAINABILITY & ECO-FRIENDLY</h2>
+		<section className={style.section}>
+			<div className={style.text}>
+				<h2 className={style.title}>SUSTAINABILITY & ECO-FRIENDLY</h2>
+				<p className={style.description}>
+					We are committed to sustainability by carefully selecting natural, non-toxic ingredients and using eco-friendly packaging that minimizes waste. 
+					Our dedication to environmental responsibility ensures that every candle we create leaves a minimal carbon footprint while promoting a healthier planet. 
+					From ethically sourced waxes and lead-free wicks to recyclable and biodegradable materials, we prioritize sustainability at every step of our process.
+				</p>
+			</div>
 			<img
-				className='ecofriendly-img'
-				// src='/about/ecophoto.svg'
-				src='/plok.jpg'
+				className={style.image}
+				src='/about/ecofriendlyphoto.svg'
 				alt='Handcraft'
 			/>
-			<p className={style.description2}>
-				We are committed to sustainability by using natural ingredients and
-				eco-friendly packaging, ensuring a minimal carbon footprint and a
-				healthier environment.
-			</p>
 		</section>
 	)
 }

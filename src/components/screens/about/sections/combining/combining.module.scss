@@ -1,24 +1,15 @@
-.wrapper {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    padding: 2rem;
-    background-color: #fff;
+.cardTitle{
+    font-size: 2rem;
+    font-weight: lighter;
+    opacity: 50%;
   }
-  
-  .card {
-    max-width: 200px;
+  .section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
-  }
-  
-  .cardTitle {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-  }
-  
-  .cardDescription {
-    font-size: 0.9rem;
-    line-height: 1.4;
+    margin-top: -10%;
+    margin-bottom: -10%;
+    gap: 1%;
+    padding: 12%;
   }
   
