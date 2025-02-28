@@ -11,8 +11,11 @@ const Deliverypayments: NextPage = () => {
 	return (
         <Layout>
             <section className = {style.section}>
-                <div>
-                    <hr className={style.line} />
+                <div className = {style.text}>
+                    <h1 className={style.title1}>Delivery and Payment</h1>
+                        <hr className={style.line} />
+                    <h2 className={style.title2}>PAYMENT</h2>
+
                 </div>
             </section>
         </Layout>

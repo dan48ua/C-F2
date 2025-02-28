@@ -9,11 +9,10 @@ const Footer: FC = () => {
 			<footer className={style.footer}>
 				<div className={style.container}>
 					<div className={style.grid}>
-						<div></div>
 						<div className={style.column}>
-							<a href='/' className={style.link}>
+						<div onClick={() => router.push('/about')} className={style.link}>
 								About us
-							</a>
+							</div>
 							<div onClick={() => router.push('/deliverypayments')} className={style.link}>
 								Delivery and payment
 							</div>
