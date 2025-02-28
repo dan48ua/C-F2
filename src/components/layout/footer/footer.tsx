@@ -1,20 +1,21 @@
 import { FC } from 'react'
 import style from './footer.module.scss'
+import { useRouter } from 'next/router'
 
 const Footer: FC = () => {
+	const router = useRouter()
 	return (
 		<>
 			<footer className={style.footer}>
 				<div className={style.container}>
 					<div className={style.grid}>
-						<div></div>
 						<div className={style.column}>
-							<a href='/' className={style.link}>
+						<div onClick={() => router.push('/about')} className={style.link}>
 								About us
-							</a>
-							<a href='/' className={style.link}>
+							</div>
+							<div onClick={() => router.push('/deliverypayments')} className={style.link}>
 								Delivery and payment
-							</a>
+							</div>
 						</div>
 						<div className={style.column}>
 							<a href='/' className={style.link}>
