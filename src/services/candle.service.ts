@@ -1,5 +1,6 @@
 import { ICandle } from '@/interfaces/candle.interface'
 import axios from 'axios'
+import router from 'next/router'
 
 const API_URL = 'http://localhost:4200'
 axios.defaults.baseURL = API_URL

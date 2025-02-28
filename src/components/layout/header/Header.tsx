@@ -9,8 +9,8 @@ const Header: FC = () => {
 	return (
 		<header className={style.header}>
 			<h1 className={style.siteTitle}>
-				<button onClick={() => router.push('/')}>ZAPALIUI CANDLUS</button>
-				{/* <button onClick={() => router.push('/')}>PUDGE CANDLUS</button> */}
+				{/* <button onClick={() => router.push('/')}>ZAPALIUI CANDLUS</button> */}
+				<button onClick={() => router.push('/')}>PUDGE CANDLUS</button>
 			</h1>
 			<div className={style.navRow}>
 				<div className={style.left}>

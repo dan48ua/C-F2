@@ -11,6 +11,7 @@ const Modal: FC<{ page: string }> = ({ page }) => {
 	const [registration, setRegistration] = useState(false)
 	const [resetPassword, setResetPassword] = useState(false)
 	const [basket, setBasket] = useState(false)
+
 	const router = useRouter()
 	const { pathname } = router
 
@@ -24,37 +25,26 @@ const Modal: FC<{ page: string }> = ({ page }) => {
 	}, [page])
 
 	useEffect(() => {
-		// switch (page) {
-		// 	case 'login':
-		// 		setLogin(true)
-		// 	case 'registration':
-		// 		setRegistration(true)
-		// 	case 'resetPassword':
-		// 		setResetPassword(true)
-		// 	case 'basket':
-		// 		setBasket(true)
-		// 	default:
-		// 		setLogin(false)
-		// 		setRegistration(false)
-		// 		setResetPassword(false)
-		// 		setBasket(false)
-		// }
-
-		if (page === 'login') {
-			setLogin(true)
-		} else if (page === 'registration') {
-			setRegistration(true)
-		} else if (page === 'resetPassword') {
-			setResetPassword(true)
-		} else if (page === 'basket') {
-			setBasket(true)
-		} else if (page === '') {
-			setLogin(false)
-			setRegistration(false)
-			setResetPassword(false)
-			setBasket(false)
-		} else {
-			router.push('/')
+		switch (page) {
+			case 'login':
+				setLogin(true)
+				break;
+			case 'registration':
+				setRegistration(true)
+				setLogin(false) // Оптимизировать эту хуйню.
+				break;
+			case 'resetPassword':
+				setResetPassword(true)
+				break;
+			case 'basket':
+				setBasket(true)
+				break;
+			default:
+				[setLogin, setRegistration, setResetPassword, setBasket].forEach((fn) =>
+					fn(false)
+				)
+				router.push(pathname)
+				break;
 		}
 	}, [page])
 	const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {

@@ -10,8 +10,8 @@ const Background: FC = () => {
 				alt='background'
 				// src='/layout/BackImg.svg'
 				// src='/Flag_of_Romania.svg'
-				// src='/lapa.jpeg'
-				src='/tekis.jpg'
+				src='/lapa.jpeg'
+				// src='/tekis.jpg'
 				quality={100}
 				fill
 				sizes='100%'
@@ -42,7 +42,7 @@ const Background: FC = () => {
 					// sizes='100%'
 					width='400'
 					height='400'
-					style={{ objectFit: 'contain' }}
+					style={{ objectFit: 'contain', left: '500px', top: '200px', position: 'relative', zIndex: '10' }}
 				/>
 			</div>
 		</section>

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import router from 'next/router'
+import Link from 'next/link'
 import { FC } from 'react'
 import style from '../modal.module.scss'
 
@@ -40,17 +41,10 @@ const Login: FC = () => {
 				<div className={style.registration}>
 					<p>
 						Don't have an account?{' '}
-						<span
-							className={style.link}
-							onClick={() => {
-								router.push({
-									pathname: pathname,
-									query: { page: 'registration' },
-								})
-							}}
-						>
-							Sign Up{' '}
-						</span>
+
+							<Link href={{ pathname: pathname, query: { page: 'registration' } }} className={style.link}>
+							Sign Up
+							</Link>
 					</p>
 				</div>
 			</div>
