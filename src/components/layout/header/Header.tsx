@@ -1,8 +1,11 @@
-import router from 'next/router'
+import { useRouter } from 'next/router'
 import { FC } from 'react'
 import style from './header.module.scss'
 
 const Header: FC = () => {
+	const router = useRouter()
+	const pathname = router.pathname
+
 	return (
 		<header className={style.header}>
 			<h1 className={style.siteTitle}>
@@ -15,7 +18,7 @@ const Header: FC = () => {
 						type='button'
 						className={style.link}
 						onClick={() => {
-							router.push({ pathname: '/', query: { page: 'login' } })
+							router.push({ pathname: pathname, query: { page: 'login' } })
 						}}
 					>
 						Sign Us
