@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import router from 'next/router'
 import Link from 'next/link'
+import router from 'next/router'
 import { FC } from 'react'
-import style from './login.module.scss'
 import globalStyles from '../modal.module.scss'
+import style from './login.module.scss'
 
 const Login: FC = () => {
 	const { pathname } = router
@@ -38,17 +38,31 @@ const Login: FC = () => {
 						placeholder='Password'
 						required
 					/>
-					<p className={style.forgotPassword}>Forgot password?</p>
-					<button className={style.button}>Sign In</button>
+					<p
+						onClick={() =>
+							router.push({
+								pathname: pathname,
+								query: { page: 'resetPassword' },
+							})
+						}
+						className={style.forgotPassword}
+					>
+						Forgot password?
+					</p>
+					<button type='button' className={globalStyles.button}>
+						Sign In
+					</button>
 				</form>
 				<hr className={style.line} />
 				<div className={style.registration}>
 					<p>
 						Don't have an account?{' '}
-
-							<Link href={{ pathname: pathname, query: { page: 'registration' } }} className={style.link}>
+						<Link
+							href={{ pathname: pathname, query: { page: 'registration' } }}
+							className={style.link}
+						>
 							Sign Up
-							</Link>
+						</Link>
 					</p>
 				</div>
 			</div>

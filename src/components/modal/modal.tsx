@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { FC, useEffect, useState } from 'react'
+import CheckEmail from './checkEmail/checkEmail'
 import Login from './login/login'
 import style from './modal.module.scss'
 import Basket from './pudge/basket'
@@ -11,10 +12,10 @@ const Modal: FC<{ page: string }> = ({ page }) => {
 	const [registration, setRegistration] = useState(false)
 	const [resetPassword, setResetPassword] = useState(false)
 	const [basket, setBasket] = useState(false)
+	const [checkEmail, setCheckEmail] = useState(false)
 
 	const router = useRouter()
 	const { pathname } = router
-
 	useEffect(() => {
 		if (page) {
 			document.body.style.overflow = 'hidden'
@@ -24,27 +25,43 @@ const Modal: FC<{ page: string }> = ({ page }) => {
 		return () => document.body.classList.remove('overflow-hidden')
 	}, [page])
 
+	const resetStates = () => {
+		;[
+			setLogin,
+			setRegistration,
+			setResetPassword,
+			setBasket,
+			setCheckEmail,
+		].forEach(fn => fn(false))
+	}
+
 	useEffect(() => {
 		switch (page) {
 			case 'login':
+				resetStates()
 				setLogin(true)
-				break;
+				break
 			case 'registration':
+				resetStates()
 				setRegistration(true)
-				setLogin(false) // Оптимизировать эту хуйню.
-				break;
+				break
 			case 'resetPassword':
+				resetStates()
 				setResetPassword(true)
-				break;
+				break
 			case 'basket':
+				resetStates()
 				setBasket(true)
-				break;
+				break
+			case 'checkEmail':
+				console.log('checkEmail')
+				resetStates()
+				setCheckEmail(true)
+				break
 			default:
-				[setLogin, setRegistration, setResetPassword, setBasket].forEach((fn) =>
-					fn(false)
-				)
+				resetStates()
 				router.push(pathname)
-				break;
+				break
 		}
 	}, [page])
 	const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -62,6 +79,8 @@ const Modal: FC<{ page: string }> = ({ page }) => {
 						<Registration />
 					) : resetPassword ? (
 						<ResetPassword />
+					) : checkEmail ? (
+						<CheckEmail />
 					) : basket ? (
 						<Basket />
 					) : null}

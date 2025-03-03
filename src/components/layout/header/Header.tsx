@@ -14,7 +14,7 @@ const Header: FC = () => {
 			</h1>
 			<div className={style.navRow}>
 				<div className={style.left}>
-					<button
+					{/* <button
 						type='button'
 						className={style.link}
 						onClick={() => {
@@ -22,8 +22,30 @@ const Header: FC = () => {
 						}}
 					>
 						{/* {isLogin ? "" : "Sign In / Registration"} */}
+					{/*
 						Sign In / Registration
-					</button>
+					</button>  */}
+
+					<div className={style.link}>
+						<span
+							onClick={() =>
+								router.push({ pathname: pathname, query: { page: 'login' } })
+							}
+						>
+							Sign In /
+						</span>
+						<span
+							onClick={() =>
+								router.push({
+									pathname: pathname,
+									query: { page: 'registration' },
+								})
+							}
+						>
+							{' '}
+							Registration
+						</span>
+					</div>
 				</div>
 				<div className={style.right}>
 					<nav>
@@ -44,7 +66,16 @@ const Header: FC = () => {
 								</button>
 							</li>
 							<li>
-								<button type='button' className={style.link}>
+								<button
+									onClick={() =>
+										router.push({
+											pathname: pathname,
+											query: { page: 'basket' },
+										})
+									}
+									type='button'
+									className={style.link}
+								>
 									Basket
 								</button>
 							</li>

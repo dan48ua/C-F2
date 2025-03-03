@@ -46,7 +46,13 @@ const Background: FC = () => {
 					// width='400'
 					// height='400'
 					style={{ objectFit: 'contain' }}
-					// style={{ objectFit: 'contain', left: '500px', top: '200px', position: 'relative', zIndex: '10' }}
+					// style={{
+					// 	objectFit: 'contain',
+					// 	left: '500px',
+					// 	top: '200px',
+					// 	position: 'relative',
+					// 	zIndex: '10',
+					// }}
 				/>
 			</div>
 		</section>
