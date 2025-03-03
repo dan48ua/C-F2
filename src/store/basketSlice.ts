@@ -5,27 +5,7 @@ const basketSlice = createSlice({
 	name: 'basket',
 	initialState,
 	reducers: {
-		// addItem: (state, action: PayloadAction<BasketItem>) => {
-		// 	console.log('Добавляем товар:', action.payload)
-		// 	console.log('Текущий список товаров:', state.items)
-
-		// 	const existingItem = state.items.find(
-		// 		item => item.id === action.payload.id
-		// 	)
-
-		// 	if (existingItem) {
-		// 		existingItem.quantity += action.payload.quantity ?? 1
-		// 	} else {
-		// 		state.items = [
-		// 			...state.items,
-		// 			{ ...action.payload, quantity: action.payload.quantity ?? 1 },
-		// 		]
-		// 	}
-		// 	console.log('Обновлённый список товаров:', state.items)
-		// },
 		addItem: (state, action: PayloadAction<BasketItem>) => {
-			console.log('Добавляем товар:', action.payload)
-
 			// Находим товар с таким же id
 			const existingItem = state.items.find(
 				item => item.id === action.payload.id
@@ -41,11 +21,6 @@ const basketSlice = createSlice({
 					quantity: action.payload.quantity ?? 1,
 				})
 			}
-
-			console.log(
-				'Обновлённый список товаров:',
-				JSON.parse(JSON.stringify(state.items))
-			)
 		},
 		removeItem: (state, action: PayloadAction<number>) => {
 			state.items = state.items.filter(item => item.id !== action.payload)
@@ -61,9 +36,17 @@ const basketSlice = createSlice({
 		clearBasket: state => {
 			state.items = []
 		},
+		setBasket: (state, action: PayloadAction<BasketItem[]>) => {
+			state.items = action.payload
+		},
 	},
 })
 
-export const { addItem, removeItem, updateItemQuantity, clearBasket } =
-	basketSlice.actions
+export const {
+	setBasket,
+	addItem,
+	removeItem,
+	updateItemQuantity,
+	clearBasket,
+} = basketSlice.actions
 export default basketSlice.reducer
