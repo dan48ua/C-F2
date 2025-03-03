@@ -9,8 +9,8 @@ const Header: FC = () => {
 	return (
 		<header className={style.header}>
 			<h1 className={style.siteTitle}>
-				{/* <button onClick={() => router.push('/')}>ZAPALIUI CANDLUS</button> */}
-				<button onClick={() => router.push('/')}>PUDGE CANDLUS</button>
+				<button onClick={() => router.push('/')}>ZAPALIUI CANDLES</button>
+				{/* <button onClick={() => router.push('/')}>PUDGE CANDLUS</button> */}
 			</h1>
 			<div className={style.navRow}>
 				<div className={style.left}>
@@ -21,7 +21,8 @@ const Header: FC = () => {
 							router.push({ pathname: pathname, query: { page: 'login' } })
 						}}
 					>
-						Sign Us
+						{/* {isLogin ? "" : "Sign In / Registration"} */}
+						Sign In / Registration
 					</button>
 				</div>
 				<div className={style.right}>
@@ -33,8 +34,8 @@ const Header: FC = () => {
 									onClick={() => router.push('/about')}
 									className={style.link}
 								>
-									{/* About Us */}
-									Among Us
+									About Us
+									{/* Among Us */}
 								</button>
 							</li>
 							<li>
@@ -44,7 +45,7 @@ const Header: FC = () => {
 							</li>
 							<li>
 								<button type='button' className={style.link}>
-									Basket Us
+									Basket
 								</button>
 							</li>
 						</ul>

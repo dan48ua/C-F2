@@ -22,16 +22,14 @@ const Background: FC = () => {
 
 			<div className={style.textWrapper}>
 				<h1 className={style.headline}>
-					LIGHT UP YOURUS
+					LIGHT UP YOUR
 					<br />
-					MOMENTUS
+					MOMENT
 					<br />
-					WITH WARMTHUS
+					WITH WARMTH
 					<br />
-					AND ELEGANCUS
-					{/*Да-да, тильт, да-да я, <br />
-					да-да-да-да-да-да-да.
-					<br /> Да-да я, да-да я, да-да-да- я */}
+					AND ELEGANC
+					{/* Да-да, тильт, да-да я, <br />да-да-да-да-да-да-да.<br/> Да-да я, да-да я, да-да-да- я */}
 				</h1>
 			</div>
 
@@ -48,13 +46,7 @@ const Background: FC = () => {
 					// width='400'
 					// height='400'
 					style={{ objectFit: 'contain' }}
-					// style={{
-					// objectFit: 'contain',
-					// left: '500px',
-					// top: '200px',
-					// position: 'relative',
-					// zIndex: '10',
-					// }}
+					// style={{ objectFit: 'contain', left: '500px', top: '200px', position: 'relative', zIndex: '10' }}
 				/>
 			</div>
 		</section>

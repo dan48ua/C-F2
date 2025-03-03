@@ -1,3 +1,4 @@
+
 .footer {
 	background-color: #FFF7E6;
 	width: 76%;
@@ -14,7 +15,7 @@
 .grid {
 	display: grid;
 	gap: 2rem;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
+	grid-template-columns: 1fr 1fr;
 }
 .column {
 	display: flex;
