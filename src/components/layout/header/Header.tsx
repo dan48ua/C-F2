@@ -21,7 +21,8 @@ const Header: FC = () => {
 							router.push({ pathname: pathname, query: { page: 'login' } })
 						}}
 					>
-						Sign In
+						{/* {isLogin ? "" : "Sign In / Registration"} */}
+						Sign In / Registration
 					</button>
 				</div>
 				<div className={style.right}>
