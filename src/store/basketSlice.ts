@@ -22,6 +22,21 @@ const basketSlice = createSlice({
 				})
 			}
 		},
+		decrementItem: (state, action: PayloadAction<BasketItem>) => {
+			const existingItem = state.items.find(
+				item => item.id === action.payload.id
+			)
+
+			if (!existingItem) return // Если товара с таким id нет, просто выходим
+
+			// Если количество больше 1, уменьшаем
+			if (existingItem.quantity > 1) {
+				existingItem.quantity--
+			} else {
+				// Если количество было 1, то при уменьшении удаляем товар из корзины
+				state.items = state.items.filter(item => item.id !== action.payload.id)
+			}
+		},
 		removeItem: (state, action: PayloadAction<number>) => {
 			state.items = state.items.filter(item => item.id !== action.payload)
 		},
@@ -43,6 +58,7 @@ const basketSlice = createSlice({
 })
 
 export const {
+	decrementItem,
 	setBasket,
 	addItem,
 	removeItem,
