@@ -19,6 +19,8 @@ const Basket: FC = () => {
 		dispatch(decrementItem({ ...item, quantity: 1 }))
 	}
 
+	
+
 	return (
 		<section className={globalStyles.modal}>
 			<div className={globalStyles.header}>
@@ -43,7 +45,7 @@ const Basket: FC = () => {
 						{items.map(item => (
 							<li key={item.id}>
 								<Image src={item.image} alt='item' width={150} height={150} />
-								{item.name}, {item.price}
+								{item.name}, {item.price * item.quantity}
 								<div className={style.quantity}>
 									<button onClick={() => handleRemove(item)}>-</button>
 									<p>{item.quantity}</p>
