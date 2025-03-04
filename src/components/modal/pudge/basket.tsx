@@ -11,6 +11,10 @@ import style from './basket.module.scss'
 const Basket: FC = () => {
 	const items = useSelector((state: RootState) => state.basket.items)
 	const dispatch = useDispatch()
+	const totalCost = items.reduce(
+		(acc, item) => acc + item.price * item.quantity,
+		0
+	)
 
 	const handleAdd = (item: BasketItem) => {
 		dispatch(addItem({ ...item, quantity: 1 }))
@@ -18,8 +22,6 @@ const Basket: FC = () => {
 	const handleRemove = (item: BasketItem) => {
 		dispatch(decrementItem({ ...item, quantity: 1 }))
 	}
-
-	
 
 	return (
 		<section className={globalStyles.modal}>
@@ -62,6 +64,17 @@ const Basket: FC = () => {
 					</button>
 				)}
 			</div>
+			<footer className={style.footer}>
+				<p className={style.shipping}>Shipping cost</p>
+				<hr className={style.line} />
+				<div className={style.total}>
+					subotal
+					<span className={style.symbol}>{totalCost} &#8372;</span>
+				</div>
+				<button className={style.button} onClick={undefined}>
+					continue
+				</button>
+			</footer>
 		</section>
 	)
 }
