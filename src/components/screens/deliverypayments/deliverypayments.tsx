@@ -4,6 +4,8 @@ import Modal from '@/components/modal/modal'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import style from './deliverypayments.module.scss'
+import Image from 'next/image'
+import globalStyles from '../modal.module.scss'
 
 const Deliverypayments: NextPage = () => {
 	const router = useRouter()
@@ -12,6 +14,17 @@ const Deliverypayments: NextPage = () => {
         <Layout>
             <section className = {style.section}>
                 <div className = {style.text}>
+                <Image
+					src='/modal/strelka.svg'
+					width={20}
+					height={20}
+					alt={'strelka'}
+					className={globalStyles.strelka}
+					onClick={() => {
+							// router.push({ pathname: pathname, query: { page: '' } })
+					router.back()
+					}}>
+                </Image>
                     <h1 className={style.title1}>Delivery and Payment</h1>
                         <hr className={style.line} />
                     <h2 className={style.title2}>PAYMENT</h2>
