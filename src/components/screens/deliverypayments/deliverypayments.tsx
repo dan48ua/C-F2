@@ -14,18 +14,21 @@ const Deliverypayments: NextPage = () => {
         <Layout>
             <section className = {style.section}>
                 <div className = {style.text}>
-                <Image
-					src='/modal/strelka.svg'
-					width={20}
-					height={20}
-					alt={'strelka'}
-					className={globalStyles.strelka}
-					onClick={() => {
-							// router.push({ pathname: pathname, query: { page: '' } })
-					router.back()
-					}}>
-                </Image>
-                    <h1 className={style.title1}>Delivery and Payment</h1>
+                    <div className={style.container}>
+                    <Image
+                        src='/modal/strelka.svg'
+                        width={20}
+                        height={20}
+                        alt={'strelka'}
+                        className={globalStyles.strelka}
+                        onClick={() => {
+                                // router.push({ pathname: pathname, query: { page: '' } })
+                        router.back()
+                        }}>
+                    </Image>
+                        <h1 className={style.title1}>Delivery and Payment</h1>
+                    </div>
+    
                         <hr className={style.line} />
                     <h2 className={style.title2}>PAYMENT</h2>
                         <p className={style.mainText}>
