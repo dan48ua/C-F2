@@ -5,7 +5,7 @@ import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import style from './deliverypayments.module.scss'
 import Image from 'next/image'
-import globalStyles from '../modal.module.scss'
+import globalStyles from '@/components/modal/modal.module.scss'
 
 const Deliverypayments: NextPage = () => {
 	const router = useRouter()
