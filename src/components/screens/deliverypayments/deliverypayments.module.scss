@@ -1,57 +1,60 @@
 .section {
-    display: grid;
-  }
+	display: grid;
+}
 
-.text{
-    margin: 1.5rem 5rem;
-    > .line{
-        
-        border: none;
-        border-top: 1px solid #000;
-        position: center;
-        opacity: 50%;
-    }
-    > .line2{
-        border: none;
-        border-top: 1px solid #000;
-        position: center;
-        opacity: 50%;
-        margin: 4rem 0 -2rem;
-    }
-    > .title1{
-        font-size: 3.4rem;
-        margin-top: 0.5rem;
-        margin-bottom: 2rem;
-    }
+.text {
+	margin: 1.5rem 5rem;
+	> .line {
+		border: none;
+		border-top: 1px solid #000;
+		position: center;
+		opacity: 50%;
+	}
+	> .line2 {
+		border: none;
+		border-top: 1px solid #000;
+		position: center;
+		opacity: 50%;
+		margin: 4rem 0 -2rem;
+	}
+	> .title1 {
+		font-size: 3.4rem;
+		margin-top: 0.5rem;
+		margin-bottom: 2rem;
+	}
 
-    > .title2{
-        font-size: 2.5rem;
-        margin: 2.5rem 0;
-    }
-    > .mainText{
-        font-size: 1.8rem;
-        opacity: 70%;
-        margin: 0.8rem 0;
-    }
-    > .link{
-        font-size: 2.1rem;
-        color: #1c1c1c;
-        font-weight: bold;
-    }
+	> .title2 {
+		font-size: 2.5rem;
+		margin: 2.5rem 0;
+	}
+	> .mainText {
+		font-size: 1.8rem;
+		opacity: 70%;
+		margin: 0.8rem 0;
+	}
+	> .link {
+		font-size: 2.1rem;
+		color: #1c1c1c;
+		font-weight: bold;
+	}
 }
 
 .container {
-    display: flex;
-    flex-direction: column; 
-    align-items: left;
-    justify-content: left;
-    position: relative;
-    > .title1{
-        font-size: 3.4rem;
-        margin-top: 0.5rem;
-        margin-bottom: 2rem;
-        > .strelka{
-            cursor: pointer; // zapush i zanimaisya chemto drugim, ya eto dodelayu oke
-        }
-    }
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	justify-content: left;
+	position: relative;
+	> .title1 {
+		font-size: 3.4rem;
+		margin-top: 0.5rem;
+		margin-bottom: 2rem;
+		> .strelka {
+			cursor: pointer;
+			margin-left: -2%;
+		}
+		.dev {
+			margin-left: 1%;
+		}
+	}
 }
