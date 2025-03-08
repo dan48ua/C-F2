@@ -33,7 +33,6 @@ const Basket: FC = () => {
 					alt={'strelka'}
 					className={globalStyles.strelka}
 					onClick={() => {
-						// router.push({ pathname: pathname, query: { page: '' } })
 						router.back()
 					}}
 				/>
@@ -45,16 +44,33 @@ const Basket: FC = () => {
 				) : (
 					<ul>
 						{items.map(item => (
-							<li key={item.id}>
-								<Image src={item.image} alt='item' width={150} height={150} />
-								{item.name}, {item.price * item.quantity}
-								<div className={style.quantity}>
-									<button onClick={() => handleRemove(item)}>-</button>
-									<p>{item.quantity}</p>
-									<button onClick={() => handleAdd(item)}>+</button>
-								</div>
+							<>
+								<li key={item.id} className={style.item}>
+									<Image src={item.image} alt='item' width={150} height={150} />
+									<div className={style.info}>
+										<h3 className={style.name}>{item.name}</h3>
+										<p className={style.price}>
+											200g - {item.price * item.quantity} &#8372;
+											<span className={style.quantity}>
+												<button
+													className={style.butt}
+													onClick={() => handleRemove(item)}
+												>
+													-
+												</button>
+												<p>{item.quantity}</p>
+												<button
+													className={style.butt}
+													onClick={() => handleAdd(item)}
+												>
+													+
+												</button>
+											</span>
+										</p>
+									</div>
+								</li>
 								<hr className={style.line} />
-							</li>
+							</>
 						))}
 					</ul>
 				)}

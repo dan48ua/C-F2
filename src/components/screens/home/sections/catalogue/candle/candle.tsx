@@ -2,7 +2,7 @@
 
 import { ICandleDataSingle } from '@/interfaces/candle.interface'
 import Image from 'next/image'
-import router from 'next/router'
+import Link from 'next/link'
 import { FC } from 'react'
 import style from '../catalogue.module.scss'
 
@@ -13,16 +13,16 @@ const CandleCard: FC<ICandleDataSingle> = ({ candle }) => {
 			<h2 className={style.cardTitle}>{candle.name}</h2>
 			<small className={style.cardPrice}>200g - {candle.price}&#8372;</small>
 			<br />
-			{/* <Link className={style.cardLink} href={`/candles/${candle.id}`}>
+			<Link className={style.cardLink} href={`/candles/${candle.id}`}>
 				more info{' '}
-			</Link> */}
-			<button
+			</Link>
+			{/* <button
 				type='button'
 				onClick={() => router.push(`/candles/${candle.id}`)}
 				className={style.cardLink}
 			>
 				More info
-			</button>
+			</button> */}
 		</div>
 	)
 }
