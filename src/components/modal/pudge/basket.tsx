@@ -1,5 +1,10 @@
 import { BasketItem } from '@/interfaces/basketItem.interface'
-import { addItem, clearBasket, decrementItem } from '@/store/basketSlice'
+import {
+	addItem,
+	clearBasket,
+	decrementItem,
+	removeItem,
+} from '@/store/basketSlice'
 import { RootState } from '@/store/store'
 import Image from 'next/image'
 import router from 'next/router'
@@ -21,6 +26,9 @@ const Basket: FC = () => {
 	}
 	const handleRemove = (item: BasketItem) => {
 		dispatch(decrementItem({ ...item, quantity: 1 }))
+	}
+	const handleDelete = (id: number) => {
+		dispatch(removeItem(id))
 	}
 
 	return (
@@ -49,6 +57,12 @@ const Basket: FC = () => {
 									<Image src={item.image} alt='item' width={150} height={150} />
 									<div className={style.info}>
 										<h3 className={style.name}>{item.name}</h3>
+										<button
+											className={style.delete}
+											onClick={() => handleDelete(item.id)}
+										>
+											Delete item
+										</button>
 										<p className={style.price}>
 											200g - {item.price * item.quantity} &#8372;
 											<span className={style.quantity}>

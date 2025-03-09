@@ -28,7 +28,7 @@
 	align-self: center;
 	font-size: 1.1rem;
 	border: #000000 1px solid;
-	padding: 0.5rem 1%;
+	padding: 0.25rem 0.5%;
 	width: 50%;
 }
 .item {
@@ -44,6 +44,17 @@
 		justify-content: space-around;
 		width: 50%;
 	}
+}
+.name {
+	font-size: 140%;
+}
+.delete {
+	background-color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 90%;
+	text-align: left;
+	opacity: 70%;
 }
 
 .butt {
@@ -68,7 +79,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	height: 29%;
+	height: 27%;
 	bottom: 0;
 	padding-top: 5%;
 	background-color: #fffff0;
