@@ -61,7 +61,11 @@ const Header: FC = () => {
 								</button>
 							</li>
 							<li>
-								<button type='button' className={style.link}>
+								<button 
+									type='button' 
+									onClick={() => router.push('/contactus')}
+									className={style.link}
+								>
 									Contact Us
 								</button>
 							</li>
