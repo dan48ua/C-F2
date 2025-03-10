@@ -10,7 +10,6 @@ const Header: FC = () => {
 		<header className={style.header}>
 			<h1 className={style.siteTitle}>
 				<button onClick={() => router.push('/')}>ZAPALIUI CANDLES</button>
-				{/* <button onClick={() => router.push('/')}>PUDGE CANDLUS</button> */}
 			</h1>
 			<div className={style.navRow}>
 				<div className={style.left}>
@@ -57,7 +56,6 @@ const Header: FC = () => {
 									className={style.link}
 								>
 									About Us
-									{/* Among Us */}
 								</button>
 							</li>
 							<li>

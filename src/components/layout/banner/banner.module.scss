@@ -37,7 +37,6 @@
 	position: absolute;
 	bottom: -23%;
 	left: -31%;
-	// bottom: -500px;
 	width: 90%;
 	height: 90%;
 	z-index: 1;
@@ -50,6 +49,6 @@
 .backgroundSection {
 	position: relative;
 	width: 100%;
-	height: 100vh; /* or however tall you need */
-	overflow: visible; /* so the candle isn't clipped */
+	height: 100vh; 
+	overflow: visible; 
 }

@@ -19,7 +19,6 @@ const Ecofriendly: FC = () => {
 			<img
 				className={style.image}
 				src='/about/ecofriendlyphoto.svg'
-				// src='/plok.jpg'
 				alt='Handcraft'
 			/>
 		</section>
