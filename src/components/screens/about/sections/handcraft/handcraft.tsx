@@ -7,7 +7,6 @@ const Handcraft: FC = () => {
 			<img
 				className='handcraft-img'
 				src='/about/handcraftphoto.svg'
-				// src='/scale_1200.jpg'
 				alt='Handcraft'
 			/>
 			<div className={style.text}>

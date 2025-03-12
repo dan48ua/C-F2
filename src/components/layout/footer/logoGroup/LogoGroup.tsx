@@ -6,15 +6,12 @@ const LogoGroup: FC = () => {
 	return (
 		<section className={style.section}>
 			<div className={style.container}>
-				{/* Left line */}
 				<hr className={style.line} />
 
-				{/* Logo (and optional text below) */}
 				<div>
 					<Image
 						alt='logo'
 						src='./layout/logoGroup.svg'
-						// src='/eva.jpg'
 						width={250}
 						height={250}
 						style={{ display: 'block', margin: '0 auto' }}

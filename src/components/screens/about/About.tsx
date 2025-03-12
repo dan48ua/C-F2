@@ -14,7 +14,6 @@ const About: NextPage = () => {
 	return (
 		<Layout>
 			<Banner />
-			{/* добавил модал компонент, его не трогай */}
 			<Modal page={typeof page === 'string' ? page : ''} />
 			<hr className={style.line1} />
 			<Handcraft />

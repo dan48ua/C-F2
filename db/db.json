@@ -4,70 +4,63 @@
 			"id": 1,
 			"name": "Candle 1",
 			"price": 200,
-			"image": "http://localhost:4200/images/candle1/candle1.1.svg",
+			"image": "http://localhost:4200/images/candle1/candle1.1.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 		},
 		{
 			"id": 2,
 			"name": "Candle 2",
-			"price": 200,
-			"image": "http://localhost:4200/images/candle2/candle2.1.svg",
+			"price": 750,
+			"image": "http://localhost:4200/images/candle2/candle2.1.jpg",
 			"description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 		},
 		{
 			"id": 3,
 			"name": "Candle 3",
 			"price": 200,
-			"image": "http://localhost:4200/images/candle3/candle3.1.svg",
+			"image": "http://localhost:4200/images/candle3/candle3.1.jpg",
 			"description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
 		},
 		{
 			"id": 4,
 			"name": "Candle 4",
-			"price": 200,
-			"image": "http://localhost:4200/images/candle4/candle4.1.svg",
+			"price": 350,
+			"image": "http://localhost:4200/images/candle4/candle4.1.jpg",
 			"description": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
 		},
 		{
 			"id": 5,
 			"name": "Candle 5",
-			"price": 200,
+			"price": null,
 			"image": "http://localhost:4200/images/candle5/candle5.1.svg",
-			"description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magna aliqua."
-		},
+			"description": "puuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuudge" 
+			},
 		{
 			"id": 6,
 			"name": "Candle 6",
-			"price": 200,
-			"image": "http://localhost:4200/images/candle6/candle6.1.svg",
+			"price": 450,
+			"image": "http://localhost:4200/images/candle6/candle6.1.jpg",
 			"description": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
 		},
 		{
 			"id": 7,
 			"name": "Candle 7",
-			"price": 200,
-			"image": "http://localhost:4200/images/candle7/candle7.1.svg",
+			"price": 450,
+			"image": "http://localhost:4200/images/candle7/candle7.1.jpg",
 			"description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."
 		},
 		{
 			"id": 8,
 			"name": "Candle 8",
-			"price": 200,
-			"image": "http://localhost:4200/images/candle8/candle8.1.svg",
+			"price": 450,
+			"image": "http://localhost:4200/images/candle8/candle8.1.jpg",
 			"description": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful."
 		},
 		{
 			"id": 9,
 			"name": "Candle 9",
-			"price": 200,
-			"image": "http://localhost:4200/images/candle9/candle9.1.svg",
-			"description": "Nor is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure some great pleasure."
-		},
-		{
-			"id": 10,
-			"name": "Candle 11",
-			"price": 200,
-			"image": "http://localhost:4200/images/candle9/candle9.1.svg",
+			"price": 450,
+			"image": "http://localhost:4200/images/candle9/candle9.1.jpg",
 			"description": "Nor is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure some great pleasure."
 		}
 	]
