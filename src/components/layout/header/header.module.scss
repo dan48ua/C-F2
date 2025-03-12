@@ -11,13 +11,13 @@
 	font-weight: bold;
 	padding: 1.5rem 0;
 	font-size: 32px;
-	> button {
+	> a {
 		text-decoration: none;
 		color: black;
 		padding: 0;
 		border: none;
 		background-color: transparent;
-		font-size: 25px;
+		font-size: 100%;
 		cursor: pointer;
 	}
 }
@@ -46,6 +46,6 @@
 	padding: 0;
 	border: none;
 	background-color: transparent;
-	font-size: 17px;
+	font-size: 90%;
 	cursor: pointer;
 }

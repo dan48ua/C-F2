@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 import style from './header.module.scss'
@@ -9,77 +10,53 @@ const Header: FC = () => {
 	return (
 		<header className={style.header}>
 			<h1 className={style.siteTitle}>
-				<button onClick={() => router.push('/')}>ZAPALIUI CANDLES</button>
+				<Link href='/'>ZAPALIUI CANDLES</Link>
 			</h1>
 			<div className={style.navRow}>
 				<div className={style.left}>
-					{/* <button
-						type='button'
+					<Link
 						className={style.link}
-						onClick={() => {
-							router.push({ pathname: pathname, query: { page: 'login' } })
+						href={{
+							pathname: pathname,
+							query: { page: 'login' },
 						}}
 					>
-						{/* {isLogin ? "" : "Sign In / Registration"} */}
-					{/*
-						Sign In / Registration
-					</button>  */}
-
-					<div className={style.link}>
-						<span
-							onClick={() =>
-								router.push({ pathname: pathname, query: { page: 'login' } })
-							}
-						>
-							Sign In /
-						</span>
-						<span
-							onClick={() =>
-								router.push({
-									pathname: pathname,
-									query: { page: 'registration' },
-								})
-							}
-						>
-							{' '}
-							Registration
-						</span>
-					</div>
+						Sign In /
+					</Link>
+					<Link
+						className={style.link}
+						href={{
+							pathname: pathname,
+							query: { page: 'registration' },
+						}}
+					>
+						Registration
+					</Link>
+					s
 				</div>
 				<div className={style.right}>
 					<nav>
 						<ul className={style.navList}>
 							<li>
-								<button
-									type='button'
-									onClick={() => router.push('/about')}
-									className={style.link}
-								>
+								<Link className={style.link} href='/about'>
 									About Us
-								</button>
+								</Link>
 							</li>
 							<li>
-								<button 
-									type='button' 
-									onClick={() => router.push('/contactus')}
-									className={style.link}
-								>
+								<Link className={style.link} href='/contactus'>
 									Contact Us
-								</button>
+								</Link>
 							</li>
 							<li>
-								<button
-									onClick={() =>
-										router.push({
-											pathname: pathname,
-											query: { page: 'basket' },
-										})
-									}
-									type='button'
+								<Link
 									className={style.link}
+									href={{
+										pathname: pathname,
+										query: { page: 'basket' },
+									}}
 								>
 									Basket
-								</button>
+								</Link>
 							</li>
 						</ul>
 					</nav>
