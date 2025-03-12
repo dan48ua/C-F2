@@ -1,7 +1,7 @@
 import Checkout from '@/components/screens/checkout/checkout'
-import { FC } from 'react'
+import { NextPage } from 'next'
 
-const checkout: FC = () => {
+const checkout: NextPage = () => {
 	return <Checkout />
 }
 

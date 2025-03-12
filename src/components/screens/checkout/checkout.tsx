@@ -3,12 +3,13 @@ import { addItem, decrementItem, removeItem } from '@/store/basketSlice'
 import { RootState } from '@/store/store'
 import { NextPage } from 'next'
 import Image from 'next/image'
-import router from 'next/router'
+import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import style from './checkout.module.scss'
 import productStyle from './products.module.scss'
 
 const Checkout: NextPage = () => {
+	const router = useRouter()
 	const items = useSelector((state: RootState) => state.basket.items)
 	const dispatch = useDispatch()
 	const totalCost = items.reduce(
@@ -101,7 +102,14 @@ const Checkout: NextPage = () => {
 
 					<hr className={style.line} />
 
-					<button className={style.checkoutBtn}>CHECKOUT</button>
+					<button
+						onClick={() => {
+							router.push('/')
+						}}
+						className={style.checkoutBtn}
+					>
+						CHECKOUT
+					</button>
 				</form>
 
 				{/* Блок заказа */}
