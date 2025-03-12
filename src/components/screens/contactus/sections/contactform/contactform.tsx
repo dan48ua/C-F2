@@ -3,14 +3,27 @@ import { useRouter } from 'next/router'
 import style from './contactform.module.scss'
 import React from 'react'
 import { FC } from 'react'
+import Image from 'next/image'
 
 const Contactform: FC = () => {
+    const router = useRouter()
     return(
         <section className={style.forma}>
                 <div className={style.container}>
-                    <h2 className={style.title}>
+                    <Image
+						        src='/modal/strelka.svg'
+								width={20}
+								height={20}
+								alt={'strelka'}
+								className={style.strelka}
+								onClick={() => {
+								    router.back()
+								}}
+							></Image>
+                    <h1 className={style.title}>
                         Contact us
-                    </h2>
+                    </h1>
+                    <hr className={style.line} />
                     <form>
                         <div className={style.inputs}>
                             <input
