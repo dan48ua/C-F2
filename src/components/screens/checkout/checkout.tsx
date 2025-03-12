@@ -1,10 +1,30 @@
+import { BasketItem } from '@/interfaces/basketItem.interface'
+import { addItem, decrementItem, removeItem } from '@/store/basketSlice'
+import { RootState } from '@/store/store'
 import { NextPage } from 'next'
 import Image from 'next/image'
 import router from 'next/router'
+import { useDispatch, useSelector } from 'react-redux'
 import style from './checkout.module.scss'
-import Product from './product'
+import productStyle from './products.module.scss'
 
 const Checkout: NextPage = () => {
+	const items = useSelector((state: RootState) => state.basket.items)
+	const dispatch = useDispatch()
+	const totalCost = items.reduce(
+		(acc, item) => acc + item.price * item.quantity,
+		0
+	)
+
+	const handleAdd = (item: BasketItem) => {
+		dispatch(addItem({ ...item, quantity: 1 }))
+	}
+	const handleRemove = (item: BasketItem) => {
+		dispatch(decrementItem({ ...item, quantity: 1 }))
+	}
+	const handleDelete = (id: string | number) => {
+		dispatch(removeItem(id))
+	}
 	return (
 		<div className={style.wrapper}>
 			{/* Шапка */}
@@ -86,7 +106,60 @@ const Checkout: NextPage = () => {
 
 				{/* Блок заказа */}
 				<div className={style.orderBlock}>
-					<Product />
+					{items.length < 1 ? (
+						<p></p>
+					) : (
+						<>
+							<ul>
+								{items.map(item => (
+									<>
+										<li key={item.id} className={productStyle.item}>
+											<Image
+												src={item.image}
+												alt='item'
+												width={150}
+												height={150}
+											/>
+											<div className={productStyle.info}>
+												<h3 className={productStyle.name}>{item.name}</h3>
+												<button
+													className={productStyle.delete}
+													onClick={() => handleDelete(item.id)}
+												>
+													Delete item
+												</button>
+												<p className={productStyle.price}>
+													200g - {item.price * item.quantity} &#8372;
+													<span className={productStyle.quantity}>
+														<button
+															className={productStyle.butt}
+															onClick={() => handleRemove(item)}
+														>
+															-
+														</button>
+														<p>{item.quantity}</p>
+														<button
+															className={productStyle.butt}
+															onClick={() => handleAdd(item)}
+														>
+															+
+														</button>
+													</span>
+												</p>
+											</div>
+										</li>
+										<hr className={productStyle.line} />
+									</>
+								))}
+							</ul>
+							<p className={productStyle.shipping}>Shipping cost</p>
+							<hr className={productStyle.line} />
+							<div className={productStyle.total}>
+								subotal
+								<span className={productStyle.symbol}>{totalCost} &#8372;</span>
+							</div>
+						</>
+					)}
 				</div>
 			</div>
 		</div>
