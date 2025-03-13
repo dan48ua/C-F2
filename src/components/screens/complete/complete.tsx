@@ -20,7 +20,7 @@ const Complete: NextPage = () => {
 			<main>
 				<div className={style.container}>
 					<div className={style.header}>
-						<h1 className={style.title}>Contact us</h1>
+						<h1 className={style.title}>zapaliui Candles</h1>
 						<h3 className={style.subtitle}>Payment completed</h3>
 					</div>
 					<hr className={style.line} />
