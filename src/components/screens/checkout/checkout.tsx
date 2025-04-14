@@ -23,7 +23,7 @@ const Checkout: NextPage = () => {
 	const handleRemove = (item: BasketItem) => {
 		dispatch(decrementItem({ ...item, quantity: 1 }))
 	}
-	const handleDelete = (id: string | number) => {
+	const handleDelete = (id: number) => {
 		dispatch(removeItem(id))
 	}
 	return (
