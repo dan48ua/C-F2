@@ -1,23 +1,25 @@
 // src/components/screens/home/sections/catalogue.tsx
-
-import { ICandleData } from '@/interfaces/candle.interface'
-import React from 'react'
+import { ICandle } from '@/interfaces/candle.interface'
+import { FC } from 'react'
 import Candle from './candle/candle'
 import style from './catalogue.module.scss'
 
-const Catalogue: React.FC<ICandleData> = ({ candles }) => {
+interface Props {
+	candles: ICandle[]
+}
+
+const Catalogue: FC<Props> = ({ candles }) => {
 	return (
-		<>
+		<div>
 			<h2 className={style.title}>PRODUCTS</h2>
 			<div className={style.container}>
 				{candles.length ? (
-					candles.map(candle => <Candle key={candle.id} candle={candle} />)
+					candles.map(c => <Candle key={c.id} candle={c} />)
 				) : (
-					<div>Candles not found!</div>
+					<div>No candles found!</div>
 				)}
 			</div>
-		</>
+		</div>
 	)
 }
-
 export default Catalogue

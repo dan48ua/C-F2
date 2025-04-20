@@ -17,6 +17,7 @@ const Home: NextPage<ICandleData> = ({ candles }) => {
 				<Banner />
 				<Modal page={typeof page === 'string' ? page : ''} />
 				<Catalogue candles={candles} />
+				{/* <Catalogue /> */}
 				<Description />
 			</Layout>
 		</>

@@ -1,5 +1,5 @@
 import { BasketItem } from '@/interfaces/basketItem.interface'
-import { addItem, decrementItem, removeItem } from '@/store/basketSlice'
+import { addItem, decrementItem } from '@/store/basketSlice'
 import { RootState } from '@/store/store'
 import { NextPage } from 'next'
 import Image from 'next/image'
@@ -24,7 +24,7 @@ const Checkout: NextPage = () => {
 		dispatch(decrementItem({ ...item, quantity: 1 }))
 	}
 	const handleDelete = (id: string | number) => {
-		dispatch(removeItem(id))
+		// dispatch(removeItem(id))
 	}
 	return (
 		<div className={style.wrapper}>

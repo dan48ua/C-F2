@@ -21,7 +21,7 @@ const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 			<div className={style.imageContainer}>
 				<div className={style.mainPhoto}>
 					<Image
-						src={candle.image}
+						src={candle.image_url}
 						alt={candle.name}
 						width={500}
 						height={500}
@@ -33,7 +33,7 @@ const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 				<p className={style.price}>200g - {candle.price} UAH</p>
 				{/* <button className={style.button}>Add to cart</button> */}
 				<div
-					onClick={() => handleAdd({ ...candle, quantity: 1 })}
+					// onClick={() => handleAdd({ ...candle, quantity: 1 })}
 					className={style.button}
 				>
 					Add to cart

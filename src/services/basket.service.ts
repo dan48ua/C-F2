@@ -1,31 +1,10 @@
-import { setBasket } from '@/store/basketSlice'
-import { RootState } from '@/store/store'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import api from './api'
 
-function InitBasketFromStorage() {
-	const dispatch = useDispatch()
-	const items = useSelector((state: RootState) => state.basket.items)
+export const getBasket = (userId: string) =>
+	api.post('/basket/get', { userId }).then(r => r.data.basket)
 
-	// 1. При первом рендере (только на клиенте) считываем данные из localStorage
-	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			const savedBasket = localStorage.getItem('basket')
-			if (savedBasket) {
-				dispatch(setBasket(JSON.parse(savedBasket)))
-			}
-		}
-	}, [dispatch])
-
-	// 2. При каждом изменении items — сохраняем корзину в localStorage
-	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			localStorage.setItem('basket', JSON.stringify(items))
-		}
-	}, [items])
-
-	// Компонент ничего не рендерит, он только "слушает" и сохраняет
-	return null
-}
-
-export default InitBasketFromStorage
+export const addToBasket = (
+	userId: string,
+	productId: string,
+	quantity: number
+) => api.post('/basket/add', { userId, productId, quantity: quantity })
