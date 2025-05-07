@@ -6,8 +6,3 @@ export const getAllProducts = (): Promise<ICandle[]> =>
 
 export const getProductById = (id: string) =>
 	api.get(`/product/getById/${id}`).then(res => res.data.product as ICandle)
-
-// export const getProductById = (): Promise<ICandle[]> =>
-// 	api
-// 		.get('/product/getById/cm9pfkaa30006javo1jic3eum')
-// 		.then(res => res.data.product as ICandle[])

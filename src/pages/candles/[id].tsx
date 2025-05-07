@@ -14,11 +14,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	return { paths, fallback: false }
 }
 
-// export const getStaticProps: GetStaticProps<Props1> = async () => {
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 	const candle = await getProductById(params?.id as string)
-	// const candle = await getProductById('cm9pfkaa30006javo1jic3eum')
-	// const candle = await getProductById()
 	console.log('RAW candle:', candle)
 	if (!candle) {
 		return {
@@ -40,25 +37,4 @@ const CandlePage: NextPage<ICandleDataSingle> = ({ candle }) => {
 	)
 }
 
-// export const getStaticPaths: GetStaticPaths<Params> = async () => {
-// 	const candles = await getAllProducts()
-// 	return {
-// 		paths: candles.map(candle => ({
-// 			params: {
-// 				id: String(candle.id),
-// 			},
-// 		})),
-// 		fallback: 'blocking',
-// 	}
-// }
-
-// export const getStaticProps: GetStaticProps = async ({ params }) => {
-// 	const candle = await getProductById(String(params?.id))
-// 	console.log('candle', candle)
-
-// 	return {
-// 		props: { candle },
-// 		revalidate: 180,
-// 	}
-// }
 export default CandlePage

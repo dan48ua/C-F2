@@ -4,11 +4,14 @@ import { BasketItem } from '@/interfaces/basketItem.interface'
 import { ICandleDataSingle } from '@/interfaces/candle.interface'
 import { addItem } from '@/store/basketSlice'
 import Image from 'next/image'
+import { join } from 'path'
 import { FC } from 'react'
 import { useDispatch } from 'react-redux'
 import style from './candle.module.scss'
 
 const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
+	const PUBLIC_API_URL = process.env.NEXT_PUBLIC_IMAGE_URL
+	const IMAGE_URL = join(PUBLIC_API_URL || '', candle.image_url)
 	const dispatch = useDispatch()
 	const handleAdd = (product: BasketItem) => {
 		console.log(product.id)
@@ -20,12 +23,7 @@ const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 		<section className={style.section}>
 			<div className={style.imageContainer}>
 				<div className={style.mainPhoto}>
-					<Image
-						src={candle.image_url}
-						alt={candle.name}
-						width={500}
-						height={500}
-					/>
+					<Image src={IMAGE_URL} alt={candle.name} width={500} height={500} />
 				</div>
 			</div>
 			<div className={style.dataContainer}>
