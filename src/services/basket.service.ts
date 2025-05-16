@@ -8,3 +8,9 @@ export const addToBasket = (
 	productId: string,
 	quantity: number
 ) => api.post('/basket/add', { userId, productId, quantity: quantity })
+
+export const removeFromBasket = (userId: string, productId: string) =>
+	api.post('/basket/delete', { userId, productId })
+
+export const clearBasket = (userId: string) =>
+	api.post('/basket/clear', { userId }).then(r => r.data.basket)
