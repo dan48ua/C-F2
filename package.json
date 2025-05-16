@@ -1,29 +1,42 @@
 {
-  "name": "zapaliui-candles",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@reduxjs/toolkit": "^2.6.0",
-    "axios": "^1.7.9",
-    "json-server": "^1.0.0-beta.3",
-    "next": "15.1.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-redux": "^9.2.0",
-    "sass": "^1.85.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
-  }
+	"name": "c-f2",
+	"version": "1.0.0",
+	"description": "Professional practice in computing final project",
+	"main": "index.js",
+	"module": "commonjs",
+	"scripts": {
+		"dev": "ts-node-dev --respawn --transpile-only --exit-child -r tsconfig-paths/register src/server.ts",
+		"clean": "rimraf dist",
+		"prisma:generate": "prisma generate",
+		"build": "tsc",
+		"start": "node dist/server.js",
+		"start:prod": "npm run clean && npm run prisma:generate && npm run build && npm run start"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@prisma/client": "^5.14.0",
+		"bcrypt": "^5.1.0",
+		"cors": "^2.8.5",
+		"dotenv": "^16.3.1",
+		"express": "^4.18.2",
+		"helmet": "^7.0.0",
+		"jsonwebtoken": "^9.0.2",
+		"morgan": "^1.10.0",
+		"multer": "^1.4.5-lts.1",
+		"stripe": "^12.0.0"
+	},
+	"devDependencies": {
+		"@types/bcrypt": "^5.0.0",
+		"@types/cors": "^2.8.17",
+		"@types/express": "^4.17.21",
+		"@types/helmet": "^4.0.0",
+		"@types/jsonwebtoken": "^9.0.2",
+		"@types/morgan": "^1.9.6",
+		"@types/multer": "^1.4.7",
+		"@types/node": "^20.5.0",
+		"prisma": "^5.14.0",
+		"ts-node-dev": "^2.0.0",
+		"typescript": "^5.3.3"
+	}
 }
