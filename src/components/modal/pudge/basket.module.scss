@@ -57,6 +57,14 @@
 	opacity: 70%;
 }
 
+.blocked {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0.5rem 5% 0.5rem 5%;
+	font-size: 1.1rem;
+}
+
 .butt {
 	background-color: white;
 	border: none;
