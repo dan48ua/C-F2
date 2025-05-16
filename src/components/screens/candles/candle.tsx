@@ -28,7 +28,9 @@ const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 			</div>
 			<div className={style.dataContainer}>
 				<h2 className={style.title}>{candle.name}</h2>
-				<p className={style.price}>200g - {candle.price} UAH</p>
+				<p className={style.price}>
+					{candle.weight}g - {candle.price} UAH
+				</p>
 				{/* <button className={style.button}>Add to cart</button> */}
 				<div
 					// onClick={() => handleAdd({ ...candle, quantity: 1 })}

@@ -53,10 +53,17 @@ const Checkout: NextPage = () => {
 					<h2>Contacts</h2>
 					<br />
 					<div className={style.columns}>
-						<input type='text' placeholder='First Name' />
-						<input type='text' placeholder='Phone Number' />
-						<input type='text' placeholder='Last Name' />
-						<input type='text' placeholder='Email Address' />
+						<input type='text' placeholder='Name' />
+						<input
+							type='text'
+							placeholder='Phone Number'
+							pattern='pattern="(\+\d{1,3}\s?)?((\(\d{3}\)\s?)|(\d{3})(\s|-?))(\d{3}(\s|-?))(\d{4})(\s?(([E|e]xt[:|.|]?)|x|X)(\s?\d+))?"'
+						/>
+						<input
+							type='text'
+							placeholder='Email Address'
+							pattern='^(?:(?:[a-zA-Z0-9!#$%&amp;&apos;*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&amp;&apos;*+/=?^_`{|}~-]+)*)|(?:"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x00-\x7f])*"))@(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}|\[(?:(?:(25[0-5]|2[0-4]\d|[01]?\d\d?)(?:\.(?!$)|$)){4}|IPv6:[a-fA-F0-9:]+)\])$'
+						/>
 						<input type='text' placeholder='Delivery Country' />
 						<input type='text' placeholder='City' />
 					</div>
