@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
 	reactStrictMode: true,
 	images: {
 		domains: ['localhost', 'candles-backend-latest.onrender.com'],
+		unoptimized: true,
 	},
 }
 
