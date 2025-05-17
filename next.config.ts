@@ -4,7 +4,11 @@ const nextConfig: NextConfig = {
 	/* config options here */
 	reactStrictMode: true,
 	images: {
-		domains: ['localhost', 'https://candlesfrontend.vercel.app'],
+		domains: [
+			'localhost',
+			'https://candles-backend-latest.onrender.com',
+			'candles-backend-latest.onrender.com',
+		],
 	},
 }
 
