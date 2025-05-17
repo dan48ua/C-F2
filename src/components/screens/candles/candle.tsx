@@ -20,20 +20,11 @@ const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 		dispatch(addItem({ ...product, quantity: 1 }))
 		// dispatch(addItem(product))
 	}
-	const myLoader = ({ src }: { src: string }) => {
-		return src
-	}
 	return (
 		<section className={style.section}>
 			<div className={style.imageContainer}>
 				<div className={style.mainPhoto}>
-					<Image
-						loader={myLoader}
-						src={IMAGE_URL}
-						alt={candle.name}
-						width={500}
-						height={500}
-					/>
+					<Image src={IMAGE_URL} alt={candle.name} width={500} height={500} />
 				</div>
 			</div>
 			<div className={style.dataContainer}>
