@@ -1,14 +1,23 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import style from './header.module.scss'
 
 const Header: FC = () => {
 	const router = useRouter()
 	const pathname = router.pathname
 
-	const isAuthenticated =
-		typeof window !== 'undefined' && !!localStorage.getItem('accessToken')
+	const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
+
+	useEffect(() => {
+		const token = localStorage.getItem('accessToken')
+		setIsAuthenticated(!!token)
+	}, [])
+
+	const handleLogout = () => {
+		localStorage.removeItem('accessToken')
+		router.reload()
+	}
 
 	return (
 		<header className={style.header}>
@@ -17,7 +26,8 @@ const Header: FC = () => {
 			</h1>
 			<div className={style.navRow}>
 				<div className={style.left}>
-					{!isAuthenticated ? (
+					{/* Prevent hydration mismatch by rendering nothing until client auth is known */}
+					{isAuthenticated === null ? null : !isAuthenticated ? (
 						<>
 							<Link
 								className={style.link}
@@ -39,13 +49,7 @@ const Header: FC = () => {
 							</Link>
 						</>
 					) : (
-						<button
-							className={style.link}
-							onClick={() => {
-								localStorage.removeItem('accessToken')
-								router.reload()
-							}}
-						>
+						<button className={style.link} onClick={handleLogout}>
 							Logout
 						</button>
 					)}

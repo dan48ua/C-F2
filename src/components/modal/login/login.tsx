@@ -33,6 +33,7 @@ const Login: FC = () => {
 
 			alert('Успешный вход')
 			router.back()
+			router.reload()
 		} catch (error: any) {
 			alert(error.response?.data?.message || 'Ошибка входа')
 		}
