@@ -12,7 +12,7 @@ import style from './candle.module.scss'
 const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 	const PUBLIC_API_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 	const IMAGE_URL = join(PUBLIC_API_URL || '', candle.image_url)
-	console.log(IMAGE_URL)
+	console.log('Image URL: ' + IMAGE_URL)
 	const dispatch = useDispatch()
 	const handleAdd = (product: BasketItem) => {
 		console.log(product.id)
@@ -32,7 +32,6 @@ const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 				<p className={style.price}>
 					{candle.weight}g - {candle.price} UAH
 				</p>
-				{/* <button className={style.button}>Add to cart</button> */}
 				<div
 					// onClick={() => handleAdd({ ...candle, quantity: 1 })}
 					className={style.button}
