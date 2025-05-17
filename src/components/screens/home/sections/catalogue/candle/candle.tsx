@@ -9,7 +9,9 @@ import style from '../catalogue.module.scss'
 
 const CandleCard: FC<ICandleDataSingle> = ({ candle }) => {
 	const PUBLIC_API_URL = process.env.NEXT_PUBLIC_IMAGE_URL
+	console.log('PUBLIC_API_URL: ' + PUBLIC_API_URL)
 	const IMAGE_URL = join(PUBLIC_API_URL || '', candle.image_url)
+	console.log('Image URL: ' + IMAGE_URL)
 	return (
 		<div className={style.card}>
 			<Image src={IMAGE_URL} alt={candle.name} width='300' height='300' />
