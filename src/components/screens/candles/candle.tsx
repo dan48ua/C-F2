@@ -13,18 +13,27 @@ const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 	const PUBLIC_API_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 	const IMAGE_URL = join(PUBLIC_API_URL || '', candle.image_url)
 	console.log('Image URL: ' + IMAGE_URL)
+
 	const dispatch = useDispatch()
 	const handleAdd = (product: BasketItem) => {
 		console.log(product.id)
 		dispatch(addItem({ ...product, quantity: 1 }))
 		// dispatch(addItem(product))
 	}
-	// добавить ароматы
+	const myLoader = ({ src }: { src: string }) => {
+		return src
+	}
 	return (
 		<section className={style.section}>
 			<div className={style.imageContainer}>
 				<div className={style.mainPhoto}>
-					<Image src={IMAGE_URL} alt={candle.name} width={500} height={500} />
+					<Image
+						loader={myLoader}
+						src={IMAGE_URL}
+						alt={candle.name}
+						width={500}
+						height={500}
+					/>
 				</div>
 			</div>
 			<div className={style.dataContainer}>
