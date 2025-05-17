@@ -12,6 +12,7 @@ import style from './candle.module.scss'
 const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 	const PUBLIC_API_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 	const IMAGE_URL = join(PUBLIC_API_URL || '', candle.image_url)
+	console.log(IMAGE_URL)
 	const dispatch = useDispatch()
 	const handleAdd = (product: BasketItem) => {
 		console.log(product.id)
