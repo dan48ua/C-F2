@@ -23,7 +23,7 @@ const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 			<div className={style.imageContainer}>
 				<div className={style.mainPhoto}>
 					<img
-						src={IMAGE_URL.href}
+						src={IMAGE_URL.toString()}
 						alt={candle.name}
 						width={500}
 						height={500}
