@@ -9,7 +9,7 @@ import style from './candle.module.scss'
 
 const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 	const PUBLIC_API_URL = process.env.NEXT_PUBLIC_IMAGE_URL
-	const IMAGE_URL = new URL(PUBLIC_API_URL || '', candle.image_url)
+	const IMAGE_URL = new URL(candle.image_url, PUBLIC_API_URL || '')
 	console.log('Image URL: ' + IMAGE_URL)
 
 	const dispatch = useDispatch()
