@@ -19,12 +19,12 @@ const Basket: FC = () => {
 	)
 
 	const handleAdd = (item: BasketItem) => {
-		if (!isAuth) return alert('Войдите в аккаунт, чтобы добавить товары')
+		if (!isAuth) return alert('Login to add items to the basket')
 		dispatch(addItem({ ...item, quantity: 1 }))
 	}
 
 	const handleRemove = (item: BasketItem) => {
-		if (!isAuth) return alert('Войдите в аккаунт, чтобы уменьшить количество')
+		if (!isAuth) return alert('Login to remove items from the basket')
 		dispatch(decrementItem({ ...item, quantity: 1 }))
 	}
 

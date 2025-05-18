@@ -27,10 +27,10 @@ const Registration: FC = () => {
 				email,
 				password,
 			})
-			alert('Успешно зарегистрировано')
+			// alert('Успешно зарегистрировано')
 			router.back()
 		} catch (error: any) {
-			alert(error.response?.data?.message || 'Ошибка регистрации')
+			alert(error.response?.data?.message || 'Unexpected error')
 		}
 	}
 

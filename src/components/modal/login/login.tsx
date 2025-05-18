@@ -31,11 +31,11 @@ const Login: FC = () => {
 			localStorage.setItem('accessToken', response.data.token)
 			dispatch(login(token))
 
-			alert('Успешный вход')
+			// alert('Успешный вход')
 			router.back()
 			router.reload()
 		} catch (error: any) {
-			alert(error.response?.data?.message || 'Ошибка входа')
+			alert(error.response?.data?.message || 'Unexpected error')
 		}
 	}
 
