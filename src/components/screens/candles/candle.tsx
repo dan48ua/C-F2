@@ -3,7 +3,6 @@
 import { BasketItem } from '@/interfaces/basketItem.interface'
 import { ICandleDataSingle } from '@/interfaces/candle.interface'
 import { addItem } from '@/store/basketSlice'
-import Image from 'next/image'
 import { join } from 'path'
 import { FC } from 'react'
 import { useDispatch } from 'react-redux'
@@ -24,7 +23,7 @@ const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 		<section className={style.section}>
 			<div className={style.imageContainer}>
 				<div className={style.mainPhoto}>
-					<Image src={IMAGE_URL} alt={candle.name} width={500} height={500} />
+					<img src={IMAGE_URL} alt={candle.name} width={500} height={500} />
 				</div>
 			</div>
 			<div className={style.dataContainer}>
