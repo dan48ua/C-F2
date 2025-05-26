@@ -18,7 +18,7 @@ const Footer: FC = () => {
 							</div>
 						</div>
 						<div className={style.column}>
-							<a href='/' className={style.link}>
+							<a href='/contactus' className={style.link}>
 								Contact us
 							</a>
 							<a href='https://www.instagram.com/zapaliui_candles/' className={style.link}>
