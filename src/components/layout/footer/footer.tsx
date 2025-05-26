@@ -21,7 +21,7 @@ const Footer: FC = () => {
 							<a href='/' className={style.link}>
 								Contact us
 							</a>
-							<a href='/' className={style.link}>
+							<a href='https://www.instagram.com/zapaliui_candles/' className={style.link}>
 								@ Instagram
 							</a>
 						</div>
