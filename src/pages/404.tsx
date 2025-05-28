@@ -14,7 +14,7 @@ export default function Custom404() {
 			src='/404/okak.webp'
 			quality={100}
 			fill
-			sizes='100%'
+			sizes='95%'
 			alt='background'
 			style={{ objectFit: 'cover', objectPosition: 'center' }}
 		/>
