@@ -1,31 +1,49 @@
 import { BasketItem } from '@/interfaces/basketItem.interface'
-import { addItem, decrementItem } from '@/store/basketSlice'
+import { addToBasket, countBasket, getBasket } from '@/services/basket.service'
 import { RootState } from '@/store/store'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import globalStyles from '../modal.module.scss'
 import style from './basket.module.scss'
 
 const Basket: FC = () => {
-	const items = useSelector((state: RootState) => state.basket.items)
+	// const items = useSelector((state: RootState) => state.basket.items)
 	const isAuth = useSelector((state: RootState) => state.auth.isAuth)
 	const dispatch = useDispatch()
 	const router = useRouter()
-	const totalCost = items.reduce(
-		(acc, item) => acc + item.price * item.quantity,
-		0
-	)
+	const [userId, setUserId] = useState('')
+	const PUBLIC_API_URL =
+		process.env.NEXT_PUBLIC_IMAGE_URL || 'http://localhost:5000'
+
+	useEffect(() => {
+		const id = localStorage.getItem('userId') || ''
+		setUserId(id)
+	}, [])
+
+	const [items, setItems] = useState<BasketItem[]>([])
+	const [totalCost, setTotalCost] = useState(0)
+
+	useEffect(() => {
+		const fetchBasketData = async () => {
+			const basketItems = await getBasket(userId)
+			console.log('All items ' + basketItems)
+			const basketTotalCost = (await countBasket(userId)) ?? 0
+			setItems(basketItems)
+			setTotalCost(basketTotalCost)
+		}
+		if (userId) fetchBasketData()
+	}, [userId])
 
 	const handleAdd = (item: BasketItem) => {
 		if (!isAuth) return alert('Login to add items to the basket')
-		dispatch(addItem({ ...item, quantity: 1 }))
+		addToBasket(userId, String(item.product.id), 1)
 	}
 
 	const handleRemove = (item: BasketItem) => {
 		if (!isAuth) return alert('Login to remove items from the basket')
-		dispatch(decrementItem({ ...item, quantity: 1 }))
+		addToBasket(userId, String(item.product.id), -1)
 	}
 
 	const handleContinue = () => {
@@ -74,11 +92,16 @@ const Basket: FC = () => {
 					<ul>
 						{items.map(item => (
 							<li key={item.id} className={style.item}>
-								<Image src={item.image} alt='item' width={150} height={150} />
+								<Image
+									src={PUBLIC_API_URL + item.product.image_url}
+									alt='item'
+									width={150}
+									height={150}
+								/>
 								<div className={style.info}>
-									<h3 className={style.name}>{item.name}</h3>
-									<p className={style.price}>
-										200g - {item.price * item.quantity} &#8372;
+									<h3 className={style.name}>{item.product.name}</h3>
+									<span className={style.price}>
+										200g - {item.product.price * item.quantity} &#8372;
 										<span className={style.quantity}>
 											<button
 												className={style.butt}
@@ -96,7 +119,7 @@ const Basket: FC = () => {
 												+
 											</button>
 										</span>
-									</p>
+									</span>
 								</div>
 							</li>
 						))}

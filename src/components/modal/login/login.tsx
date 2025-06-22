@@ -16,7 +16,8 @@ const Login: FC = () => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 
-	const API_URL = process.env.NEXT_PUBLIC_API_URL
+	const API_URL =
+		process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/'
 	const API_REGISTRATION_URL = `${API_URL}auth/login`
 
 	const handleSubmit = async (e: React.FormEvent) => {
@@ -27,7 +28,9 @@ const Login: FC = () => {
 				email,
 				password,
 			})
+			const id = response.data.user.id
 			const token = response.data.accessToken
+			localStorage.setItem('userId', id)
 			localStorage.setItem('accessToken', response.data.token)
 			dispatch(login(token))
 

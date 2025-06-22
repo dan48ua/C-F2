@@ -13,7 +13,8 @@ const Registration: FC = () => {
 	const [phone, setPhone] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
-	const API_URL = process.env.NEXT_PUBLIC_API_URL
+	const API_URL =
+		process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/'
 	const API_REGISTRATION_URL = `${API_URL}auth/register`
 
 	const handleSubmit = async (e: React.FormEvent) => {

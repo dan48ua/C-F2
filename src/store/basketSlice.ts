@@ -38,14 +38,16 @@ const basketSlice = createSlice({
 			}
 		},
 		removeItem: (state, action: PayloadAction<number>) => {
-			state.items = state.items.filter(item => item.id !== action.payload)
+			state.items = state.items.filter(
+				item => item.id !== action.payload.toString()
+			)
 		},
 		updateItemQuantity: (
 			state,
 			action: PayloadAction<{ id: number; quantity: number }>
 		) => {
 			const { id, quantity } = action.payload
-			const existingItem = state.items.find(item => item.id === id)
+			const existingItem = state.items.find(item => item.id === id.toString())
 			existingItem ? (existingItem.quantity = quantity) : null
 		},
 		clearBasket: state => {

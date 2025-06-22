@@ -1,23 +1,38 @@
 // src/components/screens/home/sections/candles.tsx
 
-import { BasketItem } from '@/interfaces/basketItem.interface'
-import { ICandleDataSingle } from '@/interfaces/candle.interface'
-import { addItem } from '@/store/basketSlice'
-import { FC } from 'react'
-import { useDispatch } from 'react-redux'
+import { ICandle, ICandleDataSingle } from '@/interfaces/candle.interface'
+import { addToBasket } from '@/services/basket.service'
+import { RootState } from '@/store/store'
+import { FC, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import style from './candle.module.scss'
 
 const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
-	const PUBLIC_API_URL = process.env.NEXT_PUBLIC_IMAGE_URL
+	const PUBLIC_API_URL =
+		process.env.NEXT_PUBLIC_IMAGE_URL || 'http://localhost:5000/uploads/'
 	const IMAGE_URL = new URL(candle.image_url, PUBLIC_API_URL || '')
 	console.log('Image URL: ' + IMAGE_URL)
-
+	const isAuth = useSelector((state: RootState) => state.auth.isAuth)
 	const dispatch = useDispatch()
-	const handleAdd = (product: BasketItem) => {
-		console.log(product.id)
-		dispatch(addItem({ ...product, quantity: 1 }))
-		// dispatch(addItem(product))
+	const [userId, setUserId] = useState('')
+
+	useEffect(() => {
+		const id = localStorage.getItem('userId') || ''
+		setUserId(id)
+	}, [])
+
+	const handleAdd = (candle: ICandle) => {
+		if (!isAuth) return alert('Login to add items to the basket')
+		// dispatch(
+		// 	addItem({
+		// 		...candle,
+		// 		quantity: 1,
+		// 		image: IMAGE_URL.toString(),
+		// 	})
+		// )
+		addToBasket(userId, String(candle.id), 1)
 	}
+
 	return (
 		<section className={style.section}>
 			<div className={style.imageContainer}>
@@ -35,10 +50,7 @@ const CandleSingle: FC<ICandleDataSingle> = ({ candle }) => {
 				<p className={style.price}>
 					{candle.weight}g - {candle.price} UAH
 				</p>
-				<div
-					// onClick={() => handleAdd({ ...candle, quantity: 1 })}
-					className={style.button}
-				>
+				<div onClick={() => handleAdd(candle)} className={style.button}>
 					Add to cart
 				</div>
 				<p className={style.inStock}>In stock</p>

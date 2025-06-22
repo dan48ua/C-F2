@@ -1,9 +1,17 @@
 export interface BasketItem {
-	id: number
+	image_url: string
+	id: string
 	name: string
 	price: number
 	quantity: number
-	image: string
+	product: {
+		id: string
+		name: string
+		price: number
+		weight: number
+		image_url: string
+		description: string
+	}
 }
 
 export interface BasketState {

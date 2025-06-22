@@ -6,7 +6,8 @@ import { FC } from 'react'
 import style from '../catalogue.module.scss'
 
 const CandleCard: FC<ICandleDataSingle> = ({ candle }) => {
-	const PUBLIC_API_URL = process.env.NEXT_PUBLIC_IMAGE_URL
+	const PUBLIC_API_URL =
+		process.env.NEXT_PUBLIC_IMAGE_URL || 'http://localhost:5000/uploads/'
 	// console.log('PUBLIC_API_URL: ' + PUBLIC_API_URL)
 	const IMAGE_URL = new URL(candle.image_url, PUBLIC_API_URL || '')
 	// console.log('Image URL: ' + IMAGE_URL)
