@@ -52,7 +52,10 @@ const Basket: FC = () => {
 				pathname: router.pathname,
 				query: { page: 'login' },
 			})
-		// Логика оформления
+		router.push({
+			pathname: router.pathname,
+			query: { page: 'checkout' },
+		})
 	}
 
 	return (
@@ -68,7 +71,7 @@ const Basket: FC = () => {
 				/>
 				<h2 className={globalStyles.title}>Basket</h2>
 			</div>
-			{!isAuth && (
+			{!isAuth ? (
 				<p className={style.blocked}>
 					You unauthorized.{' '}
 					<span
@@ -83,59 +86,65 @@ const Basket: FC = () => {
 						Login
 					</span>
 				</p>
+			) : (
+				<>
+					<div className={style.list}>
+						{items.length < 1 ? (
+							<p></p>
+						) : (
+							<ul>
+								{items.map(item => (
+									<li key={item.id} className={style.item}>
+										<Image
+											src={PUBLIC_API_URL + item.product.image_url}
+											alt='item'
+											width={150}
+											height={150}
+										/>
+										<div className={style.info}>
+											<h3 className={style.name}>{item.product.name}</h3>
+											<span className={style.price}>
+												200g - {item.product.price * item.quantity} &#8372;
+												<span className={style.quantity}>
+													<button
+														className={style.butt}
+														onClick={() => handleRemove(item)}
+														disabled={!isAuth}
+													>
+														-
+													</button>
+													<p>{item.quantity}</p>
+													<button
+														className={style.butt}
+														onClick={() => handleAdd(item)}
+														disabled={!isAuth}
+													>
+														+
+													</button>
+												</span>
+											</span>
+										</div>
+									</li>
+								))}
+							</ul>
+						)}
+					</div>
+					<div className={style.footer}>
+						<p className={style.shipping}>Shipping cost</p>
+						<hr className={style.line} />
+						<div className={style.total}>
+							subotal <span className={style.symbol}>{totalCost} &#8372;</span>
+						</div>
+						<button
+							className={style.button}
+							onClick={handleContinue}
+							disabled={items.length === 0}
+						>
+							continue
+						</button>
+					</div>
+				</>
 			)}
-			<div className={style.list}>
-				{items.length < 1 ? (
-					// <p>Basket empty</p>
-					<p></p>
-				) : (
-					<ul>
-						{items.map(item => (
-							<li key={item.id} className={style.item}>
-								<Image
-									src={PUBLIC_API_URL + item.product.image_url}
-									alt='item'
-									width={150}
-									height={150}
-								/>
-								<div className={style.info}>
-									<h3 className={style.name}>{item.product.name}</h3>
-									<span className={style.price}>
-										200g - {item.product.price * item.quantity} &#8372;
-										<span className={style.quantity}>
-											<button
-												className={style.butt}
-												onClick={() => handleRemove(item)}
-												disabled={!isAuth}
-											>
-												-
-											</button>
-											<p>{item.quantity}</p>
-											<button
-												className={style.butt}
-												onClick={() => handleAdd(item)}
-												disabled={!isAuth}
-											>
-												+
-											</button>
-										</span>
-									</span>
-								</div>
-							</li>
-						))}
-					</ul>
-				)}
-			</div>
-			<div className={style.footer}>
-				<p className={style.shipping}>Shipping cost</p>
-				<hr className={style.line} />
-				<div className={style.total}>
-					subotal <span className={style.symbol}>{totalCost} &#8372;</span>
-				</div>
-				<button className={style.button} onClick={handleContinue}>
-					continue
-				</button>
-			</div>
 		</section>
 	)
 }
